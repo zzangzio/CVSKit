@@ -1,0 +1,6 @@
+use_frameworks!
+target 'ZZExtensionKit_Tests' do
+  pod 'ZZExtensionKit', :path => '../'
+  
+  
+end

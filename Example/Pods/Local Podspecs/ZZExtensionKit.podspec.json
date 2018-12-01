@@ -1,0 +1,22 @@
+{
+  "name": "ZZExtensionKit",
+  "version": "0.1.0",
+  "summary": "A short description of ZZExtensionKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/zzangzio/ZZExtensionKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "zzangzio": "sim.jaesik@linecorp.com"
+  },
+  "source": {
+    "git": "https://github.com/zzangzio/ZZExtensionKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ZZExtensionKit/Classes/**/*"
+}
