@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'ZZExtensionKit'
-    s.version          = '0.1.0'
+    s.version          = '0.1.1'
     s.summary          = 'ZZExtensionKit is a collection of extensions and utility.'
     s.description      = <<-DESC
     ZZExtensionKit is a collection of extensions and utility for Swift.
@@ -16,13 +16,15 @@ Pod::Spec.new do |s|
     s.swift_version = '4.2'
     s.requires_arc = true
     s.source       = { git: 'https://github.com/zzangzio/ZZExtensionKit.git', tag: s.version.to_s }
-    s.source_files = 'ZZExtensionKit/Classes/**/*'
+    s.source_files = 'Sources/**/*'
 
-    # s.resource_bundles = {
-    #   'ZZExtensionKit' => ['ZZExtensionKit/Assets/*.png']
-    # }
+    # Foundation Extension
+    #s.subspec 'Foundation' do |sp|
+    #    sp.source_files  = 'Sources/Foundation/*.swift'
+    #end
 
-    # s.public_header_files = 'Pod/Classes/**/*.h'
-    # s.frameworks = 'UIKit', 'MapKit'
-    # s.dependency 'AFNetworking', '~> 2.3'
+    # UIKit Extension
+    #s.subspec 'UIKit' do |sp|
+    #    sp.source_files  = 'Sources/UIKit/*.swift'
+    #end
 end
