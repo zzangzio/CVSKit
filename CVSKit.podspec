@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'CVSKit'
-    s.version          = '0.1.1'
+    s.version          = '0.2.0'
     s.summary          = 'CVSKit is a collection of extensions and utility.'
     s.description      = <<-DESC
     CVSKit is a collection of extensions and utility for Swift.
