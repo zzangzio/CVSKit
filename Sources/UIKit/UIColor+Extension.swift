@@ -22,9 +22,9 @@ extension UIColor {
         }
     }
 
-    public convenience init(argb: Int) {
+    public convenience init(argb: UInt32) {
         let alpha = CGFloat((argb & 0xFF000000) >> 24) / 255
-        self.init(rgb: argb, alpha: alpha)
+        self.init(rgb: numericCast(argb), alpha: alpha)
     }
 
     public convenience init?(hex: String, alpha: CGFloat = 1) {
