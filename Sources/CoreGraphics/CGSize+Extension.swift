@@ -5,7 +5,7 @@
 //  Created by zzangzio on 25/11/2018.
 //
 
-import UIKit
+import CoreGraphics
 
 extension CGSize {
     public var rect: CGRect {

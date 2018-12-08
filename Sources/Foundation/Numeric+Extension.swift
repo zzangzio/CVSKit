@@ -10,14 +10,24 @@ import UIKit
 infix operator |- : AdditionPrecedence
 
 extension BinaryInteger {
-    static public func |- (left: Self, right: Self) -> Self {
+    public static func |- (left: Self, right: Self) -> Self {
         return (left - right) / 2
     }
 }
 
 extension BinaryFloatingPoint {
-    static public func |- (left: Self, right: Self) -> Self {
+    public static func |- (left: Self, right: Self) -> Self {
         return (left - right) / 2
+    }
+}
+
+extension BinaryInteger {
+    public var humanReadableFileSize: String {
+        let formatter = ByteCountFormatter()
+        formatter.allowedUnits = [.useBytes, .useKB, .useMB, .useGB]
+        formatter.countStyle = .file
+        formatter.allowsNonnumericFormatting = false
+        return formatter.string(fromByteCount: numericCast(self))
     }
 }
 

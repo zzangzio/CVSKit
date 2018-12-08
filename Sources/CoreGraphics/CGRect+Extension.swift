@@ -5,7 +5,7 @@
 //  Created by zzangzio on 25/11/2018.
 //
 
-import UIKit
+import CoreGraphics
 
 extension CGRect {
     public func intersectionRatio(_ r2: CGRect) -> CGFloat {

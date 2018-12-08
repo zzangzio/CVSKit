@@ -92,7 +92,7 @@ extension UIImage {
         DispatchQueue.userInitiated.async(execute: { self.circled() }, afterInMain: { completion($0) })
     }
     
-    @objc public func squareCircled() -> UIImage {
+    public func squareCircled() -> UIImage {
         let squareImage: UIImage = {
             guard size.width != size.height else { return self }
             
