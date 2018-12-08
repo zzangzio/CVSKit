@@ -3,7 +3,7 @@
 import UIKit
 import PlaygroundSupport
 
-class ZZExtensionKitViewController : UIViewController {
+class CVSKitViewController : UIViewController {
     override func loadView() {
         let view = UIView()
         view.backgroundColor = .white
@@ -18,4 +18,4 @@ class ZZExtensionKitViewController : UIViewController {
     }
 }
 // Present the view controller in the Live View window
-PlaygroundPage.current.liveView = ZZExtensionKitViewController()
+PlaygroundPage.current.liveView = CVSKitViewController()

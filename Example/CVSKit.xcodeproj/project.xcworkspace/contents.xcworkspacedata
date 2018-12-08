@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ZZExtensionKit.xcodeproj">
+      location = "self:/Users/simjs/Developer/workspace-ios/ZZExtensionKit/Example/CVSKit.xcodeproj">
    </FileRef>
 </Workspace>

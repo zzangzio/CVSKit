@@ -1,13 +1,13 @@
 //
 //  UIKitExtensionKitTests.swift
-//  ZZExtensionKit
+//  CVSKit
 //
 //  Created by zzangzio on 2018. 12. 2..
 //  Copyright © 2018년 zzangzio. All rights reserved.
 //
 
 import XCTest
-@testable import ZZExtensionKit
+@testable import CVSKit
 
 class CGSizeTests: XCTestCase {
 

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		86DDD2D121B3804E0073E652 /* ZZExtensionKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 86DDD2CF21B3804E0073E652 /* ZZExtensionKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86DDD2D121B3804E0073E652 /* CVSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 86DDD2CF21B3804E0073E652 /* CVSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86DDD2E121B417080073E652 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDD2D921B417080073E652 /* UIImage+Extension.swift */; };
 		86DDD2E221B417080073E652 /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDD2DA21B417080073E652 /* UIEdgeInsets+Extension.swift */; };
 		86DDD2E321B417080073E652 /* CGSize+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDD2DB21B417080073E652 /* CGSize+Extension.swift */; };
@@ -15,7 +15,7 @@
 		86DDD2E521B417080073E652 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDD2DE21B417080073E652 /* Collection+Extension.swift */; };
 		86DDD2E621B417080073E652 /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDD2DF21B417080073E652 /* DispatchQueue+Extension.swift */; };
 		86DDD2E721B417080073E652 /* Numeric+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDD2E021B417080073E652 /* Numeric+Extension.swift */; };
-		86DDD30D21B4217B0073E652 /* ZZExtensionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86DDD2CC21B3804E0073E652 /* ZZExtensionKit.framework */; };
+		86DDD30D21B4217B0073E652 /* CVSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86DDD2CC21B3804E0073E652 /* CVSKit.framework */; };
 		86DDD31321B4218E0073E652 /* UIKitExtensionKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDD2F121B41FDC0073E652 /* UIKitExtensionKitTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,8 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		86DDD2CC21B3804E0073E652 /* ZZExtensionKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZZExtensionKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		86DDD2CF21B3804E0073E652 /* ZZExtensionKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZExtensionKit.h; sourceTree = "<group>"; };
+		86DDD2CC21B3804E0073E652 /* CVSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CVSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86DDD2CF21B3804E0073E652 /* CVSKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVSKit.h; sourceTree = "<group>"; };
 		86DDD2D021B3804E0073E652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86DDD2D921B417080073E652 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		86DDD2DA21B417080073E652 /* UIEdgeInsets+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
@@ -41,12 +41,12 @@
 		86DDD2DF21B417080073E652 /* DispatchQueue+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extension.swift"; sourceTree = "<group>"; };
 		86DDD2E021B417080073E652 /* Numeric+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Numeric+Extension.swift"; sourceTree = "<group>"; };
 		86DDD2E821B419AC0073E652 /* Examples.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Examples.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		86DDD2EB21B41D110073E652 /* ZZExtensionKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = ZZExtensionKit.podspec; path = ../ZZExtensionKit.podspec; sourceTree = "<group>"; };
+		86DDD2EB21B41D110073E652 /* CVSKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = CVSKit.podspec; path = ../CVSKit.podspec; sourceTree = "<group>"; };
 		86DDD2EC21B41D110073E652 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		86DDD2ED21B41D110073E652 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		86DDD2F121B41FDC0073E652 /* UIKitExtensionKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensionKitTests.swift; sourceTree = "<group>"; };
 		86DDD30221B420A70073E652 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		86DDD30821B4217B0073E652 /* ZZExtensionKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZExtensionKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		86DDD30821B4217B0073E652 /* CVSKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CVSKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86DDD30D21B4217B0073E652 /* ZZExtensionKit.framework in Frameworks */,
+				86DDD30D21B4217B0073E652 /* CVSKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				86DDD2EA21B41D010073E652 /* Podspec Metadata */,
-				86DDD2CE21B3804E0073E652 /* ZZExtensionKit */,
+				86DDD2CE21B3804E0073E652 /* CVSKit */,
 				86DDD2D721B417080073E652 /* Sources */,
 				86DDD2EE21B41FAE0073E652 /* Tests */,
 				86DDD2CD21B3804E0073E652 /* Products */,
@@ -82,20 +82,20 @@
 		86DDD2CD21B3804E0073E652 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				86DDD2CC21B3804E0073E652 /* ZZExtensionKit.framework */,
-				86DDD30821B4217B0073E652 /* ZZExtensionKitTests.xctest */,
+				86DDD2CC21B3804E0073E652 /* CVSKit.framework */,
+				86DDD30821B4217B0073E652 /* CVSKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		86DDD2CE21B3804E0073E652 /* ZZExtensionKit */ = {
+		86DDD2CE21B3804E0073E652 /* CVSKit */ = {
 			isa = PBXGroup;
 			children = (
 				86DDD2E821B419AC0073E652 /* Examples.playground */,
-				86DDD2CF21B3804E0073E652 /* ZZExtensionKit.h */,
+				86DDD2CF21B3804E0073E652 /* CVSKit.h */,
 				86DDD2D021B3804E0073E652 /* Info.plist */,
 			);
-			path = ZZExtensionKit;
+			path = CVSKit;
 			sourceTree = "<group>";
 		};
 		86DDD2D721B417080073E652 /* Sources */ = {
@@ -134,7 +134,7 @@
 			children = (
 				86DDD2EC21B41D110073E652 /* LICENSE */,
 				86DDD2ED21B41D110073E652 /* README.md */,
-				86DDD2EB21B41D110073E652 /* ZZExtensionKit.podspec */,
+				86DDD2EB21B41D110073E652 /* CVSKit.podspec */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
@@ -156,16 +156,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86DDD2D121B3804E0073E652 /* ZZExtensionKit.h in Headers */,
+				86DDD2D121B3804E0073E652 /* CVSKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		86DDD2CB21B3804E0073E652 /* ZZExtensionKit */ = {
+		86DDD2CB21B3804E0073E652 /* CVSKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86DDD2D421B3804E0073E652 /* Build configuration list for PBXNativeTarget "ZZExtensionKit" */;
+			buildConfigurationList = 86DDD2D421B3804E0073E652 /* Build configuration list for PBXNativeTarget "CVSKit" */;
 			buildPhases = (
 				86DDD2C721B3804E0073E652 /* Headers */,
 				86DDD2C821B3804E0073E652 /* Sources */,
@@ -176,14 +176,14 @@
 			);
 			dependencies = (
 			);
-			name = ZZExtensionKit;
+			name = CVSKit;
 			productName = ZZExtensionKit;
-			productReference = 86DDD2CC21B3804E0073E652 /* ZZExtensionKit.framework */;
+			productReference = 86DDD2CC21B3804E0073E652 /* CVSKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		86DDD30721B4217B0073E652 /* ZZExtensionKitTests */ = {
+		86DDD30721B4217B0073E652 /* CVSKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86DDD31021B4217B0073E652 /* Build configuration list for PBXNativeTarget "ZZExtensionKitTests" */;
+			buildConfigurationList = 86DDD31021B4217B0073E652 /* Build configuration list for PBXNativeTarget "CVSKitTests" */;
 			buildPhases = (
 				86DDD30421B4217B0073E652 /* Sources */,
 				86DDD30521B4217B0073E652 /* Frameworks */,
@@ -194,9 +194,9 @@
 			dependencies = (
 				86DDD30F21B4217B0073E652 /* PBXTargetDependency */,
 			);
-			name = ZZExtensionKitTests;
+			name = CVSKitTests;
 			productName = ZZExtensionKitTests;
-			productReference = 86DDD30821B4217B0073E652 /* ZZExtensionKitTests.xctest */;
+			productReference = 86DDD30821B4217B0073E652 /* CVSKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -217,7 +217,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 86DDD2C621B3804E0073E652 /* Build configuration list for PBXProject "ZZExtensionKit" */;
+			buildConfigurationList = 86DDD2C621B3804E0073E652 /* Build configuration list for PBXProject "CVSKit" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -229,8 +229,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				86DDD2CB21B3804E0073E652 /* ZZExtensionKit */,
-				86DDD30721B4217B0073E652 /* ZZExtensionKitTests */,
+				86DDD2CB21B3804E0073E652 /* CVSKit */,
+				86DDD30721B4217B0073E652 /* CVSKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -280,7 +280,7 @@
 /* Begin PBXTargetDependency section */
 		86DDD30F21B4217B0073E652 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 86DDD2CB21B3804E0073E652 /* ZZExtensionKit */;
+			target = 86DDD2CB21B3804E0073E652 /* CVSKit */;
 			targetProxy = 86DDD30E21B4217B0073E652 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -442,7 +442,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ZZExtensionKit/Info.plist;
+				INFOPLIST_FILE = CVSKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -497,7 +497,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		86DDD2C621B3804E0073E652 /* Build configuration list for PBXProject "ZZExtensionKit" */ = {
+		86DDD2C621B3804E0073E652 /* Build configuration list for PBXProject "CVSKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86DDD2D221B3804E0073E652 /* Debug */,
@@ -506,7 +506,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86DDD2D421B3804E0073E652 /* Build configuration list for PBXNativeTarget "ZZExtensionKit" */ = {
+		86DDD2D421B3804E0073E652 /* Build configuration list for PBXNativeTarget "CVSKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86DDD2D521B3804E0073E652 /* Debug */,
@@ -515,7 +515,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86DDD31021B4217B0073E652 /* Build configuration list for PBXNativeTarget "ZZExtensionKitTests" */ = {
+		86DDD31021B4217B0073E652 /* Build configuration list for PBXNativeTarget "CVSKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86DDD31121B4217B0073E652 /* Debug */,

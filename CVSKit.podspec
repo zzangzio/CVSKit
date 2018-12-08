@@ -1,13 +1,13 @@
 
 Pod::Spec.new do |s|
-    s.name             = 'ZZExtensionKit'
+    s.name             = 'CVSKit'
     s.version          = '0.1.1'
-    s.summary          = 'ZZExtensionKit is a collection of extensions and utility.'
+    s.summary          = 'CVSKit is a collection of extensions and utility.'
     s.description      = <<-DESC
-    ZZExtensionKit is a collection of extensions and utility for Swift.
+    CVSKit is a collection of extensions and utility for Swift.
     DESC
 
-    s.homepage         = 'https://github.com/zzangzio/ZZExtensionKit'
+    s.homepage         = 'https://github.com/zzangzio/CVSKit'
     # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'zzangzio' => 'zzangzio@gmail.com' }
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
     s.platform     = :ios, '10.0'
     s.swift_version = '4.2'
     s.requires_arc = true
-    s.source       = { git: 'https://github.com/zzangzio/ZZExtensionKit.git', tag: s.version.to_s }
+    s.source       = { git: 'https://github.com/zzangzio/CVSKit.git', tag: s.version.to_s }
     s.source_files = 'Sources/**/*'
 
     # Foundation Extension

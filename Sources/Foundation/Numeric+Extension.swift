@@ -1,6 +1,6 @@
 //
 //  Numeric+Extension.swift
-//  ZZExtensionKit
+//  CVSKit
 //
 //  Created by zzangzio on 26/11/2018.
 //
