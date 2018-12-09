@@ -1,5 +1,5 @@
 <p align="left">
-<img src="https://github.com/zzangzio/CVSKit/Logo.png" title="CVSKit">
+<img src="https://github.com/zzangzio/CVSKit/blob/master/Logo.png" title="CVSKit">
 </p>
 
 [![CI Status](https://img.shields.io/travis/zzangzio/CVSKit.svg?style=flat)](https://travis-ci.org/zzangzio/CVSKit)
