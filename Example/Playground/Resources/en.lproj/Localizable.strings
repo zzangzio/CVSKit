@@ -4,3 +4,5 @@
 "cancel" = "Cancel";
 "remove" = "Remove";
 "entryCount" = "Entry count : %d";
+"play" = "play ▶︎";
+"stop" = "stop ◼︎";

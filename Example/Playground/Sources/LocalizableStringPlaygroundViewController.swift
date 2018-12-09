@@ -9,14 +9,17 @@
 import UIKit
 import CVSKit
 
-class LocalizableStringPlaygroundViewController: UIViewController {
+class LocalizableStringPlaygroundViewController: PlaygroundViewController {
+    override class var playgroundTitle: String {
+        return "Localizable String Playground"
+    }
+
     static var entryCount = 0
     private let tableView = UITableView.autoLayoutView(.plain)
 
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    init(title: String) {
-        super.init(nibName: nil, bundle: nil)
-        self.title = title
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         LocalizableStringPlaygroundViewController.entryCount += 1
     }
 

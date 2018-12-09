@@ -9,15 +9,22 @@
 import UIKit
 import CVSKit
 
-class ValidEmailPlaygroundViewController: UIViewController {
+class ValidEmailPlaygroundViewController: PlaygroundViewController {
+    override class var playgroundTitle: String {
+        return "Valid Email Check Playground"
+    }
+
     private let textField: UITextField = {
         let textField = UITextField.autoLayoutView()
         textField.keyboardType = .emailAddress
+        textField.placeholder = "sample@email.com"
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 0))
+        textField.leftViewMode = .always
+
         textField.layer.borderColor = UIColor(hex: "0x323232")?.cgColor
         textField.layer.borderWidth = 1
         textField.layer.cornerRadius = 5
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 0))
-        textField.leftViewMode = .always
+
         return textField
     }()
 
@@ -27,12 +34,6 @@ class ValidEmailPlaygroundViewController: UIViewController {
         button.title = "Check"
         return button
     }()
-
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    init(title: String) {
-        super.init(nibName: nil, bundle: nil)
-        self.title = title
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +69,6 @@ class ValidEmailPlaygroundViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        checkButton.becomeFirstResponder()
+        textField.becomeFirstResponder()
     }
 }

@@ -37,6 +37,10 @@
 		86772D7721BD1FD6001CCDF8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86772D7921BD1FD6001CCDF8 /* Localizable.strings */; };
 		86772D7D21BD213D001CCDF8 /* ActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D7C21BD213D001CCDF8 /* ActionTableViewCell.swift */; };
 		86772D7F21BD26F0001CCDF8 /* ValidEmailPlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D7E21BD26F0001CCDF8 /* ValidEmailPlaygroundViewController.swift */; };
+		86772D8121BD50F3001CCDF8 /* TintImagePlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D8021BD50F3001CCDF8 /* TintImagePlaygroundViewController.swift */; };
+		86772D9721BD633D001CCDF8 /* RotateAnimationPlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D9621BD633D001CCDF8 /* RotateAnimationPlaygroundViewController.swift */; };
+		86772D9921BD6390001CCDF8 /* PlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D9821BD6390001CCDF8 /* PlaygroundViewController.swift */; };
+		86772D9B21BD6A24001CCDF8 /* PulseAnimationPlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D9A21BD6A24001CCDF8 /* PulseAnimationPlaygroundViewController.swift */; };
 		86DDD2D121B3804E0073E652 /* CVSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 86DDD2CF21B3804E0073E652 /* CVSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86DDD2E121B417080073E652 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDD2D921B417080073E652 /* UIImage+Extension.swift */; };
 		86DDD2E221B417080073E652 /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDD2DA21B417080073E652 /* UIEdgeInsets+Extension.swift */; };
@@ -109,6 +113,10 @@
 		86772D7A21BD2011001CCDF8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		86772D7C21BD213D001CCDF8 /* ActionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTableViewCell.swift; sourceTree = "<group>"; };
 		86772D7E21BD26F0001CCDF8 /* ValidEmailPlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidEmailPlaygroundViewController.swift; sourceTree = "<group>"; };
+		86772D8021BD50F3001CCDF8 /* TintImagePlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintImagePlaygroundViewController.swift; sourceTree = "<group>"; };
+		86772D9621BD633D001CCDF8 /* RotateAnimationPlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateAnimationPlaygroundViewController.swift; sourceTree = "<group>"; };
+		86772D9821BD6390001CCDF8 /* PlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundViewController.swift; sourceTree = "<group>"; };
+		86772D9A21BD6A24001CCDF8 /* PulseAnimationPlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseAnimationPlaygroundViewController.swift; sourceTree = "<group>"; };
 		86DDD2CC21B3804E0073E652 /* CVSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CVSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86DDD2CF21B3804E0073E652 /* CVSKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVSKit.h; sourceTree = "<group>"; };
 		86DDD2D021B3804E0073E652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -237,6 +245,9 @@
 		86772D7221BD0E1A001CCDF8 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				86772D8021BD50F3001CCDF8 /* TintImagePlaygroundViewController.swift */,
+				86772D9621BD633D001CCDF8 /* RotateAnimationPlaygroundViewController.swift */,
+				86772D9A21BD6A24001CCDF8 /* PulseAnimationPlaygroundViewController.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -244,6 +255,7 @@
 		86772D7B21BD20F7001CCDF8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				86772D9821BD6390001CCDF8 /* PlaygroundViewController.swift */,
 				86772D7C21BD213D001CCDF8 /* ActionTableViewCell.swift */,
 			);
 			name = Common;
@@ -489,9 +501,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86772D9721BD633D001CCDF8 /* RotateAnimationPlaygroundViewController.swift in Sources */,
 				86772D7F21BD26F0001CCDF8 /* ValidEmailPlaygroundViewController.swift in Sources */,
 				86772D6621BCF0F4001CCDF8 /* MainViewController.swift in Sources */,
+				86772D8121BD50F3001CCDF8 /* TintImagePlaygroundViewController.swift in Sources */,
+				86772D9B21BD6A24001CCDF8 /* PulseAnimationPlaygroundViewController.swift in Sources */,
 				86772D6321BCEFC2001CCDF8 /* AppDelegate.swift in Sources */,
+				86772D9921BD6390001CCDF8 /* PlaygroundViewController.swift in Sources */,
 				86772D7421BD1B3B001CCDF8 /* LocalizableStringPlaygroundViewController.swift in Sources */,
 				86772D7D21BD213D001CCDF8 /* ActionTableViewCell.swift in Sources */,
 			);

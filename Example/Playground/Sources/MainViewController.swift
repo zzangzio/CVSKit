@@ -27,38 +27,31 @@ class MainViewController: UIViewController {
         tableView.delegate = self
     }
 
-    private lazy var dataSource: [(title: String, action: () -> Void)] = {
-        guard let navigationController = self.navigationController else { return [] }
-
-        return [
-            ("Localizable String Playground", {
-                let vc = LocalizableStringPlaygroundViewController(title: "Localizable String Playground")
-                navigationController.pushViewController(vc, animated: true)
-            }),
-            ("Valid Email Check Playground", {
-                let vc = ValidEmailPlaygroundViewController(title: "Valid Email Check Playground")
-                navigationController.pushViewController(vc, animated: true)
-            }),
-            ("Valid Email Check Playground", {
-                let vc = ValidEmailPlaygroundViewController(title: "Valid Email Check Playground")
-                navigationController.pushViewController(vc, animated: true)
-            }),
-        ]
+    private let playgroundViewControllerTypes: [PlaygroundViewController.Type] = {
+        [LocalizableStringPlaygroundViewController.self,
+        ValidEmailPlaygroundViewController.self,
+        TintImagePlaygroundViewController.self,
+        RotateAnimationPlaygroundViewController.self,
+        PulseAnimationPlaygroundViewController.self]
     }()
 }
 
 // MARK: - UITableViewDataSource
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        return playgroundViewControllerTypes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ActionTableViewCell = tableView.dequeueReusableCell()
 
-        let dataSource = self.dataSource[indexPath.row]
-        cell.title = dataSource.title
-        cell.action = dataSource.action
+        let playgroundViewControllerType = self.playgroundViewControllerTypes[indexPath.row]
+        cell.title = playgroundViewControllerType.playgroundTitle
+        cell.action = { [weak self] in
+            guard let self = self else { return }
+            guard let navigationController = self.navigationController else { return }
+            navigationController.pushViewController(playgroundViewControllerType.init(), animated: true)
+        }
 
         return cell
     }
