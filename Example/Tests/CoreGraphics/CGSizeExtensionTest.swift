@@ -1,15 +1,15 @@
 //
-//  UIKitExtensionKitTests.swift
-//  CVSKit
+//  CGSizeExtensionTest.swift
+//  CVSKitTests
 //
-//  Created by zzangzio on 2018. 12. 2..
+//  Created by zzangzio on 2018. 12. 9..
 //  Copyright © 2018년 zzangzio. All rights reserved.
 //
 
 import XCTest
 @testable import CVSKit
 
-class CGSizeTests: XCTestCase {
+class CGSizeExtensionTest: XCTestCase {
 
     func testSizeRect() {
         let size = CGSize(width: 100, height: 200)
@@ -50,21 +50,5 @@ class CGSizeTests: XCTestCase {
                        CGSize(width: 100, height: 200))
         XCTAssertEqual(size.resizedAspectFit(fitSize: CGSize(width: 100, height: 50)),
                        CGSize(width: 25, height: 50))
-    }
-}
-
-class CGRectTests: XCTestCase {
-    func testIntersectionRatio() {
-        let r1 = CGRect(x: 0, y: 0, width: 100, height: 100)
-        var r2 = CGRect(x: 50, y: 0, width: 100, height: 100)
-
-        XCTAssertEqual(r1.intersectionRatio(r2), 0.5)
-
-        r2 = CGRect(x: 50, y: 50, width: 100, height: 100)
-        XCTAssertEqual(r1.intersectionRatio(r2), 0.25)
-
-        r2 = CGRect(x: 0, y: 50, width: 100, height: 50)
-        XCTAssertEqual(r1.intersectionRatio(r2), 0.5)
-        XCTAssertEqual(r2.intersectionRatio(r1), 1)
     }
 }

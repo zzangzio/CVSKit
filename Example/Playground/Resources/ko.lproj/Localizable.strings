@@ -1,0 +1,6 @@
+"showAlert" = "alert 보여주기";
+"warning" = "경고";
+"ok" = "확인";
+"cancel" = "취소";
+"remove" = "제거";
+"entryCount" = "진입 횟수 : %d";

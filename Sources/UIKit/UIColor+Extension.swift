@@ -28,8 +28,9 @@ extension UIColor {
     }
 
     public convenience init?(hex: String, alpha: CGFloat = 1) {
-        let formalHex = hex.replacingOccurrences(of: "#", with: "0x")
-        guard let rgb = Int(formalHex, radix: 16) else { return nil }
+        let numericString = hex.replacingOccurrences(of: "#", with: "")
+            .replacingOccurrences(of: "0x", with: "")
+        guard let rgb = Int(numericString, radix: 16) else { return nil }
         self.init(rgb: rgb, alpha: alpha)
     }
 }

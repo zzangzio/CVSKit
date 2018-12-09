@@ -22,7 +22,7 @@ extension String {
     }
 }
 
-extension NSString {
+extension String {
     public var isValidEmail: Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
 
@@ -35,7 +35,7 @@ extension NSString {
     }
     
     public func toJsonObject() -> Any? {
-        guard let data = data(using: String.Encoding.utf8.rawValue) else {
+        guard let data = data(using: .utf8) else {
             return nil
         }
         return try? JSONSerialization.jsonObject(with: data, options: [])
