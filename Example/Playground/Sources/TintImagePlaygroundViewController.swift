@@ -2,7 +2,7 @@
 //  TintImagePlaygroundViewController.swift
 //  Playground
 //
-//  Created by simjs on 2018. 12. 9..
+//  Created by zzangzio on 2018. 12. 9..
 //  Copyright © 2018년 zzangzio. All rights reserved.
 //
 
@@ -15,13 +15,13 @@ class TintImagePlaygroundViewController: PlaygroundViewController {
     }
 
     private let originImageView: UIImageView = {
-        let imageView = UIImageView.autolayoutView(image: UIImage(named: "tint_color")!)
+        let imageView = UIImageView.autolayoutView(image: UIImage(named: "sample")!)
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
     private let tintImageView: UIImageView = {
-        let imageView = UIImageView.autolayoutView(image: UIImage(named: "tint_color")!)
+        let imageView = UIImageView.autolayoutView(image: UIImage(named: "sample")!)
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -32,22 +32,22 @@ class TintImagePlaygroundViewController: PlaygroundViewController {
         let layoutGuide = view.backportSafeAreaLayoutGuide
         
         return [tintColorButtons.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
-                tintColorButtons.topAnchor.constraint(equalTo: layoutGuide.topAnchor, constant: 20),
+                tintColorButtons.centerYAnchor.constraint(equalTo: layoutGuide.centerYAnchor),
                 originImageView.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
-                originImageView.topAnchor.constraint(equalTo: tintColorButtons.bottomAnchor),
+                originImageView.bottomAnchor.constraint(equalTo: tintColorButtons.topAnchor),
                 tintImageView.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
-                tintImageView.topAnchor.constraint(equalTo: originImageView.bottomAnchor)]
+                tintImageView.topAnchor.constraint(equalTo: tintColorButtons.bottomAnchor)]
     }()
 
     private lazy var compactConstraints: [NSLayoutConstraint] = {
         let layoutGuide = view.backportSafeAreaLayoutGuide
 
-        return [tintColorButtons.centerYAnchor.constraint(equalTo: layoutGuide.centerYAnchor),
-                tintColorButtons.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 20),
+        return [tintColorButtons.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
+                tintColorButtons.centerYAnchor.constraint(equalTo: layoutGuide.centerYAnchor),
                 originImageView.centerYAnchor.constraint(equalTo: layoutGuide.centerYAnchor),
-                originImageView.leadingAnchor.constraint(equalTo: tintColorButtons.trailingAnchor),
+                originImageView.trailingAnchor.constraint(equalTo: tintColorButtons.leadingAnchor),
                 tintImageView.centerYAnchor.constraint(equalTo: layoutGuide.centerYAnchor),
-                tintImageView.leadingAnchor.constraint(equalTo: originImageView.trailingAnchor)]
+                tintImageView.leadingAnchor.constraint(equalTo: tintColorButtons.trailingAnchor)]
     }()
 
     override func viewDidLoad() {

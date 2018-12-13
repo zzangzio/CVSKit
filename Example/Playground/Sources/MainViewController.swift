@@ -31,6 +31,7 @@ class MainViewController: UIViewController {
         [LocalizableStringPlaygroundViewController.self,
         ValidEmailPlaygroundViewController.self,
         TintImagePlaygroundViewController.self,
+        TransparentImagePlaygroundViewController.self,
         RotateAnimationPlaygroundViewController.self,
         PulseAnimationPlaygroundViewController.self]
     }()

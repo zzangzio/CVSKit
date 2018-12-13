@@ -124,6 +124,47 @@ extension UIView {
     }
 }
 
+extension NSLayoutDimension {
+    @discardableResult
+    public static func |= (left: NSLayoutDimension, right: NSLayoutDimension) -> NSLayoutConstraint {
+        return left.constraint(equalTo: right, multiplier: 1)
+    }
+
+    @discardableResult
+    public static func |= (left: NSLayoutDimension, right: CGFloat) -> NSLayoutConstraint {
+        return left.constraint(equalToConstant: right)
+    }
+
+    @discardableResult
+    public static func |= (left: NSLayoutDimension, right: (NSLayoutDimension, CGFloat)) -> NSLayoutConstraint {
+        return left.constraint(equalTo: right.0, multiplier: 1, constant: right.1)
+    }
+}
+
+extension NSLayoutXAxisAnchor {
+    @discardableResult
+    public static func |= (left: NSLayoutXAxisAnchor, right: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
+        return left.constraint(equalTo: right)
+    }
+
+    @discardableResult
+    public static func |= (left: NSLayoutXAxisAnchor, right: (NSLayoutXAxisAnchor, CGFloat)) -> NSLayoutConstraint {
+        return left.constraint(equalTo: right.0, constant: right.1)
+    }
+}
+
+extension NSLayoutYAxisAnchor {
+    @discardableResult
+    public static func |= (left: NSLayoutYAxisAnchor, right: NSLayoutYAxisAnchor) -> NSLayoutConstraint {
+        return left.constraint(equalTo: right)
+    }
+
+    @discardableResult
+    public static func |= (left: NSLayoutYAxisAnchor, right: (NSLayoutYAxisAnchor, CGFloat)) -> NSLayoutConstraint {
+        return left.constraint(equalTo: right.0, constant: right.1)
+    }
+}
+
 extension Array where Element == NSLayoutConstraint {
     public func activate() {
         NSLayoutConstraint.activate(self)

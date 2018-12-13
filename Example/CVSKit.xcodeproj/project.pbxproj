@@ -48,6 +48,7 @@
 		86DDD2E621B417080073E652 /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDD2DF21B417080073E652 /* DispatchQueue+Extension.swift */; };
 		86DDD2E721B417080073E652 /* Numeric+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDD2E021B417080073E652 /* Numeric+Extension.swift */; };
 		86DDD30D21B4217B0073E652 /* CVSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86DDD2CC21B3804E0073E652 /* CVSKit.framework */; };
+		86FA643D21C287F400A75675 /* TransparentImagePlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA643C21C287F400A75675 /* TransparentImagePlaygroundViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		86DDD2ED21B41D110073E652 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		86DDD30221B420A70073E652 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86DDD30821B4217B0073E652 /* CVSKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CVSKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		86FA643C21C287F400A75675 /* TransparentImagePlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentImagePlaygroundViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				86772D8021BD50F3001CCDF8 /* TintImagePlaygroundViewController.swift */,
+				86FA643C21C287F400A75675 /* TransparentImagePlaygroundViewController.swift */,
 				86772D9621BD633D001CCDF8 /* RotateAnimationPlaygroundViewController.swift */,
 				86772D9A21BD6A24001CCDF8 /* PulseAnimationPlaygroundViewController.swift */,
 			);
@@ -503,6 +506,7 @@
 			files = (
 				86772D9721BD633D001CCDF8 /* RotateAnimationPlaygroundViewController.swift in Sources */,
 				86772D7F21BD26F0001CCDF8 /* ValidEmailPlaygroundViewController.swift in Sources */,
+				86FA643D21C287F400A75675 /* TransparentImagePlaygroundViewController.swift in Sources */,
 				86772D6621BCF0F4001CCDF8 /* MainViewController.swift in Sources */,
 				86772D8121BD50F3001CCDF8 /* TintImagePlaygroundViewController.swift in Sources */,
 				86772D9B21BD6A24001CCDF8 /* PulseAnimationPlaygroundViewController.swift in Sources */,
