@@ -11,7 +11,7 @@ import CVSKit
 
 class TintImagePlaygroundViewController: PlaygroundViewController {
     override class var playgroundTitle: String {
-        return "Tint image Playground"
+        return "Tint image"
     }
 
     private let originImageView: UIImageView = {

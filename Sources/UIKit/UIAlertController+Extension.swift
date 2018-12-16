@@ -9,12 +9,12 @@
 import UIKit
 
 extension UIAlertController {
-    public static func alert(withtitle title: String?, message: String?) -> UIAlertController {
+    public static func alert(withTitle title: String?, message: String?) -> UIAlertController {
         return UIAlertController(title: title, message: message, preferredStyle: .alert)
     }
 
     public static func actionSheet(withTitle title: String?, message: String?) -> UIAlertController {
-        if UIDevice.current.userInterfaceIdiom != .pad {
+        if UIDevice.isPad == false {
             return UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         }
         else {

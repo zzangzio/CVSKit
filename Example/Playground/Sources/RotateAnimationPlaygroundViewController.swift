@@ -11,7 +11,7 @@ import CVSKit
 
 class RotateAnimationPlaygroundViewController: PlaygroundViewController {
     override class var playgroundTitle: String {
-        return "Rotate animation Playground"
+        return "Rotate animation"
     }
 
     private let playButton: UIButton = {

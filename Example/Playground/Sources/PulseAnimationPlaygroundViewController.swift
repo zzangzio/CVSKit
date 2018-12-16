@@ -11,7 +11,7 @@ import CVSKit
 
 class PulseAnimationPlaygroundViewController: PlaygroundViewController {
     override class var playgroundTitle: String {
-        return "Pulse animation Playground"
+        return "Pulse animation"
     }
 
     private let playButton: UIButton = {

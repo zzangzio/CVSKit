@@ -25,7 +25,7 @@ pod 'CVSKit'
 ```
 
 ## Features
-### Foundation
+### Foundation/Extension
 <details>
 <summary>String+Extension</summary>
 
@@ -131,9 +131,19 @@ extension Date {
 ```
 <a href="https://github.com/zzangzio/CVSKit/blob/master/Sources/Foundation/Date+Extension.swift">go to source</a>
 </details>
+<details>
+<summary>Comparable+Extension</summary>
+
+```swift
+extension Comparable {
+    func boundary(minimum: Self, maximum: Self) -> Self
+}
+```
+<a href="https://github.com/zzangzio/CVSKit/blob/master/Sources/Foundation/Comparable+Extension.swift">go to source</a>
+</details>
 
 
-### CoreGraphics
+### CoreGraphics/Extension
 <details>
 <summary>CGSize+Extension</summary>
 
@@ -159,7 +169,8 @@ extension CGRect {
 <a href="https://github.com/zzangzio/CVSKit/blob/master/Sources/CoreGraphics/CGRect+Extension.swift">go to source</a>
 </details>
 
-### UIKit
+
+### UIKit/Extension
 <details>
 <summary>UIEdgeInsets+Extension</summary>
 
@@ -172,6 +183,17 @@ extension UIEdgeInsets {
 }
 ```
 <a href="https://github.com/zzangzio/CVSKit/blob/master/Sources/UIKit/UIEdgeInsets+Extension.swift">go to source</a>
+</details>
+<details>
+<summary>UIDevice+Extension</summary>
+
+```swift
+extension UIDevice {
+    static var isPhone: Bool
+    static var isPad: Bool
+}
+```
+<a href="https://github.com/zzangzio/CVSKit/blob/master/Sources/UIKit/UIDevice+Extension.swift">go to source</a>
 </details>
 <details>
 <summary>UIColor+Extension</summary>
@@ -225,20 +247,6 @@ extension UIImage {
 }
 ```
 <a href="https://github.com/zzangzio/CVSKit/blob/master/Sources/UIKit/UIImage+Extension.swift">go to source</a>
-</details>
-<details>
-<summary>HardwareModel</summary>
-
-```swift
-enum HardwareModel: String {
-    case iPhone, iPhone4, iPhone5, ...
-    case iPad, iPad2, iPadMini, ...
-    case iPod1G, iPod2G, iPod3G, ...
-    ...
-    case unknown
-}
-```
-<a href="https://github.com/zzangzio/CVSKit/blob/master/Sources/UIKit/HardwareModel.swift">go to source</a>
 </details>
 <details>
 <summary>UIView+Extension</summary>
@@ -402,6 +410,23 @@ extension UIAlertController {
 ```
 <a href="https://github.com/zzangzio/CVSKit/blob/master/Sources/UIKit/UIAlertController+Extension.swift">go to source</a>
 </details>
+
+
+### UIKit/Util
+<details>
+<summary>HardwareModel</summary>
+
+```swift
+enum HardwareModel: String {
+    case iPhone, iPhone4, iPhone5, ...
+    case iPad, iPad2, iPadMini, ...
+    case iPod1G, iPod2G, iPod3G, ...
+    ...
+    case unknown
+}
+```
+<a href="https://github.com/zzangzio/CVSKit/blob/master/Sources/UIKit/HardwareModel.swift">go to source</a>
+</details>
 <details>
 <summary>SensitiveButton</summary>
 
@@ -417,6 +442,53 @@ class SensitiveHitTester: NSObject {
 ```
 <a href="https://github.com/zzangzio/CVSKit/blob/master/Sources/UIKit/SensitiveButton.swift">go to source</a>
 </details>
+<details>
+<summary>TabControlView</summary>
+
+```swift
+class TabControlView: UIView {
+    var titles: [String]
+}
+```
+<a href="https://github.com/zzangzio/CVSKit/blob/master/Sources/UIKit/TabControlView.swift">go to source</a>
+</details>
+<details>
+<summary>ChameleonView</summary>
+
+```swift
+class ChameleonView: UIView {
+    var minFeel: CGFloat
+    var maxFeel: CGFloat
+    var feel: CGFloat
+    func set(colorAndLocations: [(UIColor, CGFloat)])
+}
+```
+<a href="https://github.com/zzangzio/CVSKit/blob/master/Sources/UIKit/ChameleonView.swift">go to source</a>
+</details>
+<details>
+<summary>ChameleonView</summary>
+
+```swift
+class HorizontalPagingView: UIScrollView {
+    var pages: [UIView]
+    func setPage(at index: Int, animated: Bool)
+    var pageIndex: Int
+}
+```
+<a href="https://github.com/zzangzio/CVSKit/blob/master/Sources/UIKit/HorizontalPagingView.swift">go to source</a>
+</details>
+<details>
+<summary>CircularProgressView</summary>
+
+```swift
+class CircularProgressView: UIView {
+    var maxProgress: CGFloat
+    var progress: CGFloat
+}
+```
+<a href="https://github.com/zzangzio/CVSKit/blob/master/Sources/UIKit/CircularProgressView.swift">go to source</a>
+</details>
+
 
 ## Author
 

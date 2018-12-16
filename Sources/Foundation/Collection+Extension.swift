@@ -81,7 +81,7 @@ extension Array {
             do {
                 return try JSONSerialization.data(withJSONObject: self, options: options)
             } catch {
-                print("CVSKit: Error has occurred while converting Array to JSON.")
+                print("CVSKit.Array: Error has occurred while converting Array to JSON.")
                 return nil
             }
         }()
@@ -101,7 +101,7 @@ extension Dictionary {
             do {
                 return try JSONSerialization.data(withJSONObject: self, options: options)
             } catch {
-                print("CVSKit: Error has occurred while converting Dictionary to JSON.")
+                print("CVSKit.Dictionary: Error has occurred while converting Dictionary to JSON.")
                 return nil
             }
         }()

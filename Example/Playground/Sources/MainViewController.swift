@@ -33,7 +33,11 @@ class MainViewController: UIViewController {
         TintImagePlaygroundViewController.self,
         TransparentImagePlaygroundViewController.self,
         RotateAnimationPlaygroundViewController.self,
-        PulseAnimationPlaygroundViewController.self]
+        PulseAnimationPlaygroundViewController.self,
+        TabControlPlaygroundViewController.self,
+        TabControlManyTabsPlaygroundViewController.self,
+        ChameleonViewPlaygroundViewController.self,
+        CircularProgressPlaygroundViewController.self]
     }()
 }
 

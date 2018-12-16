@@ -13,7 +13,7 @@
 		86772D0921BBD0FD001CCDF8 /* UIGestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D0321BBD0FD001CCDF8 /* UIGestureRecognizer+Extension.swift */; };
 		86772D0A21BBD0FD001CCDF8 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D0421BBD0FD001CCDF8 /* UIView+Animation.swift */; };
 		86772D0B21BBD0FD001CCDF8 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D0521BBD0FD001CCDF8 /* UIBarButtonItem+Extension.swift */; };
-		86772D0C21BBD0FD001CCDF8 /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D0621BBD0FD001CCDF8 /* HardwareModel.swift */; };
+		86772D0C21BBD0FD001CCDF8 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D0621BBD0FD001CCDF8 /* UIDevice+Extension.swift */; };
 		86772D0D21BBD0FD001CCDF8 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D0721BBD0FD001CCDF8 /* UIView+Extension.swift */; };
 		86772D1021BBD49D001CCDF8 /* CVSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86DDD2CC21B3804E0073E652 /* CVSKit.framework */; };
 		86772D1121BBD49D001CCDF8 /* CVSKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 86DDD2CC21B3804E0073E652 /* CVSKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -30,7 +30,6 @@
 		86772D5921BCEC3B001CCDF8 /* CGSizeExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D5821BCEC3B001CCDF8 /* CGSizeExtensionTest.swift */; };
 		86772D5B21BCEC49001CCDF8 /* CGRectExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D5A21BCEC49001CCDF8 /* CGRectExtensionTest.swift */; };
 		86772D6321BCEFC2001CCDF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D5F21BCEFC2001CCDF8 /* AppDelegate.swift */; };
-		86772D6621BCF0F4001CCDF8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D6521BCF0F4001CCDF8 /* MainViewController.swift */; };
 		86772D6821BCF3E7001CCDF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86772D6721BCF3E7001CCDF8 /* Images.xcassets */; };
 		86772D6E21BD07A3001CCDF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86772D6D21BD07A3001CCDF8 /* LaunchScreen.xib */; };
 		86772D7421BD1B3B001CCDF8 /* LocalizableStringPlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D7321BD1B3B001CCDF8 /* LocalizableStringPlaygroundViewController.swift */; };
@@ -48,6 +47,17 @@
 		86DDD2E621B417080073E652 /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDD2DF21B417080073E652 /* DispatchQueue+Extension.swift */; };
 		86DDD2E721B417080073E652 /* Numeric+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDD2E021B417080073E652 /* Numeric+Extension.swift */; };
 		86DDD30D21B4217B0073E652 /* CVSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86DDD2CC21B3804E0073E652 /* CVSKit.framework */; };
+		86E9FFC621C4925300CDDCFB /* Comparable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E9FFC521C4925300CDDCFB /* Comparable+Extension.swift */; };
+		86E9FFCC21C496A400CDDCFB /* HardwareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E9FFCB21C496A400CDDCFB /* HardwareModel.swift */; };
+		86E9FFCE21C4996500CDDCFB /* TabControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E9FFCD21C4996500CDDCFB /* TabControlView.swift */; };
+		86E9FFD021C4A06500CDDCFB /* TabControlPlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E9FFCF21C4A06500CDDCFB /* TabControlPlaygroundViewController.swift */; };
+		86E9FFD221C4BAEE00CDDCFB /* TabControlManyTabsPlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E9FFD121C4BAEE00CDDCFB /* TabControlManyTabsPlaygroundViewController.swift */; };
+		86E9FFDF21C51BC300CDDCFB /* ChameleonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E9FFD321C4CFFE00CDDCFB /* ChameleonView.swift */; };
+		86E9FFE321C51D6300CDDCFB /* HorizontalPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E9FFDA21C4E10100CDDCFB /* HorizontalPagingView.swift */; };
+		86E9FFE521C51D7B00CDDCFB /* ChameleonViewPlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E9FFD521C4D51B00CDDCFB /* ChameleonViewPlaygroundViewController.swift */; };
+		86E9FFE821C538F800CDDCFB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D6521BCF0F4001CCDF8 /* MainViewController.swift */; };
+		86E9FFEA21C5401A00CDDCFB /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E9FFE921C5401A00CDDCFB /* CircularProgressView.swift */; };
+		86E9FFEC21C5419400CDDCFB /* CircularProgressPlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E9FFEB21C5419400CDDCFB /* CircularProgressPlaygroundViewController.swift */; };
 		86FA643D21C287F400A75675 /* TransparentImagePlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FA643C21C287F400A75675 /* TransparentImagePlaygroundViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +100,7 @@
 		86772D0321BBD0FD001CCDF8 /* UIGestureRecognizer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
 		86772D0421BBD0FD001CCDF8 /* UIView+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
 		86772D0521BBD0FD001CCDF8 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
-		86772D0621BBD0FD001CCDF8 /* HardwareModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HardwareModel.swift; sourceTree = "<group>"; };
+		86772D0621BBD0FD001CCDF8 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		86772D0721BBD0FD001CCDF8 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		86772D1321BBD53C001CCDF8 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		86772D1521BBD69F001CCDF8 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -131,6 +141,16 @@
 		86DDD2ED21B41D110073E652 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		86DDD30221B420A70073E652 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86DDD30821B4217B0073E652 /* CVSKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CVSKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		86E9FFC521C4925300CDDCFB /* Comparable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+Extension.swift"; sourceTree = "<group>"; };
+		86E9FFCB21C496A400CDDCFB /* HardwareModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HardwareModel.swift; sourceTree = "<group>"; };
+		86E9FFCD21C4996500CDDCFB /* TabControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabControlView.swift; sourceTree = "<group>"; };
+		86E9FFCF21C4A06500CDDCFB /* TabControlPlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabControlPlaygroundViewController.swift; sourceTree = "<group>"; };
+		86E9FFD121C4BAEE00CDDCFB /* TabControlManyTabsPlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabControlManyTabsPlaygroundViewController.swift; sourceTree = "<group>"; };
+		86E9FFD321C4CFFE00CDDCFB /* ChameleonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChameleonView.swift; sourceTree = "<group>"; };
+		86E9FFD521C4D51B00CDDCFB /* ChameleonViewPlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChameleonViewPlaygroundViewController.swift; sourceTree = "<group>"; };
+		86E9FFDA21C4E10100CDDCFB /* HorizontalPagingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalPagingView.swift; sourceTree = "<group>"; };
+		86E9FFE921C5401A00CDDCFB /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		86E9FFEB21C5419400CDDCFB /* CircularProgressPlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressPlaygroundViewController.swift; sourceTree = "<group>"; };
 		86FA643C21C287F400A75675 /* TransparentImagePlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentImagePlaygroundViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,8 +184,7 @@
 		86772CE521BBCF2F001CCDF8 /* CoreGraphics */ = {
 			isa = PBXGroup;
 			children = (
-				86772CE621BBCF2F001CCDF8 /* CGSize+Extension.swift */,
-				86772CE721BBCF2F001CCDF8 /* CGRect+Extension.swift */,
+				86E9FFC921C4930700CDDCFB /* Extension */,
 			);
 			path = CoreGraphics;
 			sourceTree = "<group>";
@@ -251,6 +270,10 @@
 				86FA643C21C287F400A75675 /* TransparentImagePlaygroundViewController.swift */,
 				86772D9621BD633D001CCDF8 /* RotateAnimationPlaygroundViewController.swift */,
 				86772D9A21BD6A24001CCDF8 /* PulseAnimationPlaygroundViewController.swift */,
+				86E9FFCF21C4A06500CDDCFB /* TabControlPlaygroundViewController.swift */,
+				86E9FFD121C4BAEE00CDDCFB /* TabControlManyTabsPlaygroundViewController.swift */,
+				86E9FFD521C4D51B00CDDCFB /* ChameleonViewPlaygroundViewController.swift */,
+				86E9FFEB21C5419400CDDCFB /* CircularProgressPlaygroundViewController.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -310,20 +333,8 @@
 		86DDD2D821B417080073E652 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				86DDD2DA21B417080073E652 /* UIEdgeInsets+Extension.swift */,
-				86772D1921BBDBCD001CCDF8 /* UIColor+Extension.swift */,
-				86DDD2D921B417080073E652 /* UIImage+Extension.swift */,
-				86772D0621BBD0FD001CCDF8 /* HardwareModel.swift */,
-				86772D0721BBD0FD001CCDF8 /* UIView+Extension.swift */,
-				86772D0421BBD0FD001CCDF8 /* UIView+Animation.swift */,
-				86772D0221BBD0FD001CCDF8 /* UIImageView+Extension.swift */,
-				86772D1521BBD69F001CCDF8 /* UIButton+Extension.swift */,
-				86772D1B21BBDFC8001CCDF8 /* UILabel+Extension.swift */,
-				86772D1321BBD53C001CCDF8 /* UITableView+Extension.swift */,
-				86772D0521BBD0FD001CCDF8 /* UIBarButtonItem+Extension.swift */,
-				86772D0321BBD0FD001CCDF8 /* UIGestureRecognizer+Extension.swift */,
-				86772D2121BCD9EA001CCDF8 /* UIAlertController+Extension.swift */,
-				86772D1721BBD984001CCDF8 /* SensitiveControl.swift */,
+				86E9FFC721C492F400CDDCFB /* Extension */,
+				86E9FFCA21C4932D00CDDCFB /* Util */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -331,12 +342,7 @@
 		86DDD2DD21B417080073E652 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				86772D1F21BBE8E4001CCDF8 /* String+Extension.swift */,
-				86772D1D21BBE2A2001CCDF8 /* OptionSet+Extension.swift */,
-				86DDD2DE21B417080073E652 /* Collection+Extension.swift */,
-				86DDD2DF21B417080073E652 /* DispatchQueue+Extension.swift */,
-				86DDD2E021B417080073E652 /* Numeric+Extension.swift */,
-				86772D4C21BCE8AE001CCDF8 /* Date+Extension.swift */,
+				86E9FFC821C492FD00CDDCFB /* Extension */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -359,6 +365,62 @@
 				86DDD30221B420A70073E652 /* Info.plist */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		86E9FFC721C492F400CDDCFB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				86DDD2DA21B417080073E652 /* UIEdgeInsets+Extension.swift */,
+				86772D0621BBD0FD001CCDF8 /* UIDevice+Extension.swift */,
+				86772D1921BBDBCD001CCDF8 /* UIColor+Extension.swift */,
+				86DDD2D921B417080073E652 /* UIImage+Extension.swift */,
+				86772D0721BBD0FD001CCDF8 /* UIView+Extension.swift */,
+				86772D0421BBD0FD001CCDF8 /* UIView+Animation.swift */,
+				86772D0221BBD0FD001CCDF8 /* UIImageView+Extension.swift */,
+				86772D1521BBD69F001CCDF8 /* UIButton+Extension.swift */,
+				86772D1B21BBDFC8001CCDF8 /* UILabel+Extension.swift */,
+				86772D1321BBD53C001CCDF8 /* UITableView+Extension.swift */,
+				86772D0521BBD0FD001CCDF8 /* UIBarButtonItem+Extension.swift */,
+				86772D0321BBD0FD001CCDF8 /* UIGestureRecognizer+Extension.swift */,
+				86772D2121BCD9EA001CCDF8 /* UIAlertController+Extension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		86E9FFC821C492FD00CDDCFB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				86772D1F21BBE8E4001CCDF8 /* String+Extension.swift */,
+				86772D1D21BBE2A2001CCDF8 /* OptionSet+Extension.swift */,
+				86DDD2DE21B417080073E652 /* Collection+Extension.swift */,
+				86DDD2DF21B417080073E652 /* DispatchQueue+Extension.swift */,
+				86DDD2E021B417080073E652 /* Numeric+Extension.swift */,
+				86772D4C21BCE8AE001CCDF8 /* Date+Extension.swift */,
+				86E9FFC521C4925300CDDCFB /* Comparable+Extension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		86E9FFC921C4930700CDDCFB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				86772CE621BBCF2F001CCDF8 /* CGSize+Extension.swift */,
+				86772CE721BBCF2F001CCDF8 /* CGRect+Extension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		86E9FFCA21C4932D00CDDCFB /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				86E9FFCB21C496A400CDDCFB /* HardwareModel.swift */,
+				86772D1721BBD984001CCDF8 /* SensitiveControl.swift */,
+				86E9FFCD21C4996500CDDCFB /* TabControlView.swift */,
+				86E9FFD321C4CFFE00CDDCFB /* ChameleonView.swift */,
+				86E9FFDA21C4E10100CDDCFB /* HorizontalPagingView.swift */,
+				86E9FFE921C5401A00CDDCFB /* CircularProgressView.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,9 +567,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				86772D9721BD633D001CCDF8 /* RotateAnimationPlaygroundViewController.swift in Sources */,
+				86E9FFE821C538F800CDDCFB /* MainViewController.swift in Sources */,
+				86E9FFD021C4A06500CDDCFB /* TabControlPlaygroundViewController.swift in Sources */,
 				86772D7F21BD26F0001CCDF8 /* ValidEmailPlaygroundViewController.swift in Sources */,
+				86E9FFD221C4BAEE00CDDCFB /* TabControlManyTabsPlaygroundViewController.swift in Sources */,
+				86E9FFEC21C5419400CDDCFB /* CircularProgressPlaygroundViewController.swift in Sources */,
 				86FA643D21C287F400A75675 /* TransparentImagePlaygroundViewController.swift in Sources */,
-				86772D6621BCF0F4001CCDF8 /* MainViewController.swift in Sources */,
+				86E9FFE521C51D7B00CDDCFB /* ChameleonViewPlaygroundViewController.swift in Sources */,
 				86772D8121BD50F3001CCDF8 /* TintImagePlaygroundViewController.swift in Sources */,
 				86772D9B21BD6A24001CCDF8 /* PulseAnimationPlaygroundViewController.swift in Sources */,
 				86772D6321BCEFC2001CCDF8 /* AppDelegate.swift in Sources */,
@@ -526,17 +592,23 @@
 				86772D0D21BBD0FD001CCDF8 /* UIView+Extension.swift in Sources */,
 				86DDD2E221B417080073E652 /* UIEdgeInsets+Extension.swift in Sources */,
 				86772D0821BBD0FD001CCDF8 /* UIImageView+Extension.swift in Sources */,
+				86E9FFCC21C496A400CDDCFB /* HardwareModel.swift in Sources */,
+				86E9FFCE21C4996500CDDCFB /* TabControlView.swift in Sources */,
 				86772D1A21BBDBCD001CCDF8 /* UIColor+Extension.swift in Sources */,
 				86DDD2E621B417080073E652 /* DispatchQueue+Extension.swift in Sources */,
 				86772D0921BBD0FD001CCDF8 /* UIGestureRecognizer+Extension.swift in Sources */,
-				86772D0C21BBD0FD001CCDF8 /* HardwareModel.swift in Sources */,
+				86E9FFEA21C5401A00CDDCFB /* CircularProgressView.swift in Sources */,
+				86772D0C21BBD0FD001CCDF8 /* UIDevice+Extension.swift in Sources */,
 				86772D2021BBE8E4001CCDF8 /* String+Extension.swift in Sources */,
+				86E9FFE321C51D6300CDDCFB /* HorizontalPagingView.swift in Sources */,
 				86772D1C21BBDFC8001CCDF8 /* UILabel+Extension.swift in Sources */,
 				86772D0B21BBD0FD001CCDF8 /* UIBarButtonItem+Extension.swift in Sources */,
 				86772D1621BBD69F001CCDF8 /* UIButton+Extension.swift in Sources */,
 				86DDD2E721B417080073E652 /* Numeric+Extension.swift in Sources */,
 				86772D1421BBD53C001CCDF8 /* UITableView+Extension.swift in Sources */,
 				86DDD2E121B417080073E652 /* UIImage+Extension.swift in Sources */,
+				86E9FFC621C4925300CDDCFB /* Comparable+Extension.swift in Sources */,
+				86E9FFDF21C51BC300CDDCFB /* ChameleonView.swift in Sources */,
 				86772D2221BCD9EA001CCDF8 /* UIAlertController+Extension.swift in Sources */,
 				86772D1821BBD984001CCDF8 /* SensitiveControl.swift in Sources */,
 				86772D0A21BBD0FD001CCDF8 /* UIView+Animation.swift in Sources */,

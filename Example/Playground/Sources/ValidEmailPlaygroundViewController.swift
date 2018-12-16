@@ -11,7 +11,7 @@ import CVSKit
 
 class ValidEmailPlaygroundViewController: PlaygroundViewController {
     override class var playgroundTitle: String {
-        return "Valid Email Check Playground"
+        return "Check valid Email"
     }
 
     private let textField: UITextField = {
@@ -60,7 +60,7 @@ class ValidEmailPlaygroundViewController: PlaygroundViewController {
 
             let title = email.isValidEmail ? "Valid :)" : "Invalid :("
 
-            UIAlertController.alert(withtitle: title, message: nil)
+            UIAlertController.alert(withTitle: title, message: nil)
             .addDefaultAction(title: "ok".localized())
             .presented(on: self)
         }

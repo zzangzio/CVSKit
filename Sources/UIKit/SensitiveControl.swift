@@ -8,15 +8,15 @@
 
 import UIKit
 
-public class SensitiveButton: UIButton {
+open class SensitiveButton: UIButton {
     public let hitTester = SensitiveHitTester()
 
-    public override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+    open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         return hitTester.point(inside: point, bounds: bounds, with: event)
     }
 }
 
-public class SensitiveHitTester: NSObject {
+open class SensitiveHitTester: NSObject {
     public var extraHitEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 
     func point(inside point: CGPoint, bounds: CGRect, with event: UIEvent?) -> Bool {

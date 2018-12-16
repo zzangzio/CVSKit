@@ -51,7 +51,7 @@ public enum HardwareModel: String {
 
     case unknown
 
-    init(name: String) {
+    public init() {
         switch HardwareModel.hardwareModelName {
         // phone
         case "iPhone1,1":

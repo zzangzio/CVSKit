@@ -11,7 +11,7 @@ import CVSKit
 
 class LocalizableStringPlaygroundViewController: PlaygroundViewController {
     override class var playgroundTitle: String {
-        return "Localizable String Playground"
+        return "Localizable String"
     }
 
     static var entryCount = 0
@@ -39,7 +39,7 @@ class LocalizableStringPlaygroundViewController: PlaygroundViewController {
 
         return [("entryCount".localized(with: LocalizableStringPlaygroundViewController.entryCount), nil),
                 ("showAlert".localized(),
-                 { UIAlertController.alert(withtitle: "warning".localized(), message: nil)
+                 { UIAlertController.alert(withTitle: "warning".localized(), message: nil)
                     .addDefaultAction(title: "ok".localized())
                     .addCancelAction(title: "cancel".localized())
                     .addDestructiveAction(title: "remove".localized())

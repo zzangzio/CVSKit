@@ -202,6 +202,82 @@ extension UIView: LayoutAnchorProvider {
     }
 }
 
+// MARK: - lineViews
+
+extension UIView {
+    @discardableResult
+    public func bottomLine(_ height: CGFloat = 1,
+                           out: Bool = false,
+                           configure: ((UIImageView) -> Void)? = nil) -> UIImageView {
+        let tag = (hash + 90)
+        let view = viewWithTag(tag) as? UIImageView ?? {
+            let view = UIImageView()
+            view.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
+            view.tag = tag
+            self.addSubview(view)
+            return view
+            }()
+        let offsetY = out ? frame.height : frame.height - height
+        view.frame = CGRect(x: 0, y: offsetY, width: frame.width, height: height)
+        configure?(view)
+        return view
+    }
+
+    @discardableResult
+    public func topLine(_ height: CGFloat = 1,
+                        out: Bool = false,
+                        configure: ((UIImageView) -> Void)? = nil) -> UIImageView {
+        let tag = (hash + 91)
+        let view = viewWithTag(tag) as? UIImageView ?? {
+            let view = UIImageView()
+            view.autoresizingMask = .flexibleWidth
+            self.addSubview(view)
+            view.tag = tag
+            return view
+            }()
+        let offsetY = out ? -height : 0
+        view.frame = CGRect(x: 0, y: offsetY, width: frame.width, height: height)
+        configure?(view)
+        return view
+    }
+
+    @discardableResult
+    public func leftLine(_ width: CGFloat = 1,
+                         out: Bool = false,
+                         configure: ((UIImageView) -> Void)? = nil) -> UIImageView {
+        let tag = (hash + 92)
+        let view = viewWithTag(tag) as? UIImageView ?? {
+            let view = UIImageView()
+            view.autoresizingMask = .flexibleHeight
+            self.addSubview(view)
+            view.tag = tag
+            return view
+            }()
+        let offsetX = out ? -width : 0
+        view.frame = CGRect(x: offsetX, y: 0, width: width, height: frame.height)
+        configure?(view)
+        return view
+    }
+
+    @discardableResult
+    public func rightLine(_ width: CGFloat = 1,
+                          out: Bool = false,
+                          configure: ((UIImageView) -> Void)? = nil) -> UIImageView {
+        let tag = (hash + 93)
+        let view = viewWithTag(tag) as? UIImageView ?? {
+            let view = UIImageView()
+            view.autoresizingMask = [.flexibleLeftMargin, .flexibleHeight]
+            self.addSubview(view)
+            view.tag = tag
+            return view
+            }()
+        let offsetX = out ? frame.width : frame.width - width
+        view.frame = CGRect(x: offsetX, y: 0, width: width, height: frame.height)
+        configure?(view)
+        return view
+    }
+}
+
 // MARK: - Util
 extension UIView {
     public var asImage: UIImage {

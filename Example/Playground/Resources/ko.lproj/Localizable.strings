@@ -6,3 +6,4 @@
 "entryCount" = "진입 횟수 : %d";
 "play" = "재생 ▶︎";
 "stop" = "중지 ◼︎";
+"complete" = "완료";

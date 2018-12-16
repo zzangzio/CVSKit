@@ -12,7 +12,7 @@ import CVSKit
 class TransparentImagePlaygroundViewController: PlaygroundViewController {
 
     override class var playgroundTitle: String {
-        return "Transparent image Playground"
+        return "Transparent image"
     }
 
     private let originImageView: UIImageView = {
