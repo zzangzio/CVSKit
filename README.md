@@ -373,6 +373,16 @@ extension UITableView {
 <a href="https://github.com/zzangzio/CVSKit/blob/master/Sources/UIKit/UITableView+Extension.swift">go to source</a>
 </details>
 <details>
+<summary>UIScrollView+Extension</summary>
+
+```swift
+extension UIScrollView {
+    var backportContentInset: UIEdgeInsets
+}
+```
+<a href="https://github.com/zzangzio/CVSKit/blob/master/Sources/UIKit/UIScrollView+Extension.swift">go to source</a>
+</details>
+<details>
 <summary>UIBarButtonItem+Extension</summary>
 
 ```swift
@@ -413,6 +423,26 @@ extension UIAlertController {
 
 
 ### UIKit/Util
+<details>
+<summary>UIViewController+SwipeDismiss</summary>
+
+```swift
+extension UIViewController {
+    func configureSwipeDismiss(enabled: Bool)
+}
+
+protocol SwipeDismissViewControllerProtocol: NSObjectProtocol {
+    optional var shouldBeginSwipeDismiss: Bool { get }
+    optional var scrollViewForSwipeDismiss: UIScrollView { get }
+    optional var dimmingBackgroundViewForSwipeDismiss: UIView { get }
+
+    optional func willFinishSwipeDismiss()
+    optional func didFinishSwipeDismiss()
+    optional func didCancelSwipeDismiss()
+}
+```
+<a href="https://github.com/zzangzio/CVSKit/blob/master/Sources/UIKit/UIViewController+SwipeDismiss.swift">go to source</a>
+</details>
 <details>
 <summary>HardwareModel</summary>
 

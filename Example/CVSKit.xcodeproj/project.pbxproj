@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		860279C821CDFD65006EAA25 /* UIViewController+SwipeDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860279C721CDFD65006EAA25 /* UIViewController+SwipeDismiss.swift */; };
+		860279E021CE557C006EAA25 /* SwipeDismissPlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860279DF21CE557C006EAA25 /* SwipeDismissPlaygroundViewController.swift */; };
+		860279E321CE7543006EAA25 /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860279E121CE74DF006EAA25 /* UIScrollView+Extension.swift */; };
+		860279E521CE757E006EAA25 /* SwipeDismissTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860279C921CDFDD3006EAA25 /* SwipeDismissTransitioningDelegate.swift */; };
 		86772CE821BBCF2F001CCDF8 /* CGSize+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772CE621BBCF2F001CCDF8 /* CGSize+Extension.swift */; };
 		86772CE921BBCF2F001CCDF8 /* CGRect+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772CE721BBCF2F001CCDF8 /* CGRect+Extension.swift */; };
 		86772D0821BBD0FD001CCDF8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D0221BBD0FD001CCDF8 /* UIImageView+Extension.swift */; };
@@ -93,6 +97,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		860279C721CDFD65006EAA25 /* UIViewController+SwipeDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SwipeDismiss.swift"; sourceTree = "<group>"; };
+		860279C921CDFDD3006EAA25 /* SwipeDismissTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDismissTransitioningDelegate.swift; sourceTree = "<group>"; };
+		860279DF21CE557C006EAA25 /* SwipeDismissPlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDismissPlaygroundViewController.swift; sourceTree = "<group>"; };
+		860279E121CE74DF006EAA25 /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		86772CE621BBCF2F001CCDF8 /* CGSize+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Extension.swift"; sourceTree = "<group>"; };
 		86772CE721BBCF2F001CCDF8 /* CGRect+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Extension.swift"; sourceTree = "<group>"; };
 		86772CEE21BBD030001CCDF8 /* Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +189,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		860279C621CDFCEF006EAA25 /* InteractiveDismiss */ = {
+			isa = PBXGroup;
+			children = (
+				860279C721CDFD65006EAA25 /* UIViewController+SwipeDismiss.swift */,
+				860279C921CDFDD3006EAA25 /* SwipeDismissTransitioningDelegate.swift */,
+			);
+			name = InteractiveDismiss;
+			sourceTree = "<group>";
+		};
 		86772CE521BBCF2F001CCDF8 /* CoreGraphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +291,7 @@
 				86E9FFD121C4BAEE00CDDCFB /* TabControlManyTabsPlaygroundViewController.swift */,
 				86E9FFD521C4D51B00CDDCFB /* ChameleonViewPlaygroundViewController.swift */,
 				86E9FFEB21C5419400CDDCFB /* CircularProgressPlaygroundViewController.swift */,
+				860279DF21CE557C006EAA25 /* SwipeDismissPlaygroundViewController.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -380,6 +398,7 @@
 				86772D1521BBD69F001CCDF8 /* UIButton+Extension.swift */,
 				86772D1B21BBDFC8001CCDF8 /* UILabel+Extension.swift */,
 				86772D1321BBD53C001CCDF8 /* UITableView+Extension.swift */,
+				860279E121CE74DF006EAA25 /* UIScrollView+Extension.swift */,
 				86772D0521BBD0FD001CCDF8 /* UIBarButtonItem+Extension.swift */,
 				86772D0321BBD0FD001CCDF8 /* UIGestureRecognizer+Extension.swift */,
 				86772D2121BCD9EA001CCDF8 /* UIAlertController+Extension.swift */,
@@ -413,6 +432,7 @@
 		86E9FFCA21C4932D00CDDCFB /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				860279C621CDFCEF006EAA25 /* InteractiveDismiss */,
 				86E9FFCB21C496A400CDDCFB /* HardwareModel.swift */,
 				86772D1721BBD984001CCDF8 /* SensitiveControl.swift */,
 				86E9FFCD21C4996500CDDCFB /* TabControlView.swift */,
@@ -577,6 +597,7 @@
 				86772D8121BD50F3001CCDF8 /* TintImagePlaygroundViewController.swift in Sources */,
 				86772D9B21BD6A24001CCDF8 /* PulseAnimationPlaygroundViewController.swift in Sources */,
 				86772D6321BCEFC2001CCDF8 /* AppDelegate.swift in Sources */,
+				860279E021CE557C006EAA25 /* SwipeDismissPlaygroundViewController.swift in Sources */,
 				86772D9921BD6390001CCDF8 /* PlaygroundViewController.swift in Sources */,
 				86772D7421BD1B3B001CCDF8 /* LocalizableStringPlaygroundViewController.swift in Sources */,
 				86772D7D21BD213D001CCDF8 /* ActionTableViewCell.swift in Sources */,
@@ -598,9 +619,11 @@
 				86DDD2E621B417080073E652 /* DispatchQueue+Extension.swift in Sources */,
 				86772D0921BBD0FD001CCDF8 /* UIGestureRecognizer+Extension.swift in Sources */,
 				86E9FFEA21C5401A00CDDCFB /* CircularProgressView.swift in Sources */,
+				860279C821CDFD65006EAA25 /* UIViewController+SwipeDismiss.swift in Sources */,
 				86772D0C21BBD0FD001CCDF8 /* UIDevice+Extension.swift in Sources */,
 				86772D2021BBE8E4001CCDF8 /* String+Extension.swift in Sources */,
 				86E9FFE321C51D6300CDDCFB /* HorizontalPagingView.swift in Sources */,
+				860279E521CE757E006EAA25 /* SwipeDismissTransitioningDelegate.swift in Sources */,
 				86772D1C21BBDFC8001CCDF8 /* UILabel+Extension.swift in Sources */,
 				86772D0B21BBD0FD001CCDF8 /* UIBarButtonItem+Extension.swift in Sources */,
 				86772D1621BBD69F001CCDF8 /* UIButton+Extension.swift in Sources */,
@@ -612,6 +635,7 @@
 				86772D2221BCD9EA001CCDF8 /* UIAlertController+Extension.swift in Sources */,
 				86772D1821BBD984001CCDF8 /* SensitiveControl.swift in Sources */,
 				86772D0A21BBD0FD001CCDF8 /* UIView+Animation.swift in Sources */,
+				860279E321CE7543006EAA25 /* UIScrollView+Extension.swift in Sources */,
 				86772CE821BBCF2F001CCDF8 /* CGSize+Extension.swift in Sources */,
 				86772D1E21BBE2A2001CCDF8 /* OptionSet+Extension.swift in Sources */,
 				86DDD2E521B417080073E652 /* Collection+Extension.swift in Sources */,
