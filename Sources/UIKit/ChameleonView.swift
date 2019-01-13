@@ -88,7 +88,7 @@ open class ChameleonView: UIView {
         let rWeight = (feel - leftLocation) / maxValue
         let lWeight = 1 - rWeight
 
-        let weight = CGFloat(1.2)
+        let weight: CGFloat = (lWeight == 1) || (lWeight == 0) ? 1 : 1.2
         let r = (leftComponent.0 * lWeight + rightComponent.0 * rWeight) * weight
         let g = (leftComponent.1 * lWeight + rightComponent.1 * rWeight) * weight
         let b = (leftComponent.2 * lWeight + rightComponent.2 * rWeight) * weight

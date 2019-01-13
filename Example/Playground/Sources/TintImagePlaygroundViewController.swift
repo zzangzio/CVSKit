@@ -15,13 +15,13 @@ class TintImagePlaygroundViewController: PlaygroundViewController {
     }
 
     private let originImageView: UIImageView = {
-        let imageView = UIImageView.autolayoutView(image: UIImage(named: "sample")!)
+        let imageView = UIImageView.autoLayoutView(image: "sample".image)
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
     private let tintImageView: UIImageView = {
-        let imageView = UIImageView.autolayoutView(image: UIImage(named: "sample")!)
+        let imageView = UIImageView.autoLayoutView(image: "sample".image)
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()

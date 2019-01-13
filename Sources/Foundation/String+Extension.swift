@@ -8,17 +8,24 @@
 
 import UIKit
 
-// MARK: - Localization
+// MARK: - Convenience Localization
 extension String {
-    public func localized() -> String {
+    public var localized: String {
         return NSLocalizedString(self, comment: self)
     }
 
     public func localized(with arguments: CVarArg...) -> String {
         if arguments.count == 0 {
-            return localized()
+            return localized
         }
         return String(format: localized(), locale: .current, arguments: arguments)
+    }
+}
+
+// MARK: - Convenience UIImage
+extension String {
+    public var image: UIImage {
+        return UIImage(named: self)!
     }
 }
 

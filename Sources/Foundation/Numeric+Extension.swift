@@ -13,11 +13,27 @@ extension BinaryInteger {
     public static func |- (left: Self, right: Self) -> Self {
         return (left - right) / 2
     }
+
+    public var degreesToRadians: Double {
+        return Double(self) * Double.pi / 180
+    }
+
+    public var radiansToDegrees: Double {
+        return Double(self) * 180 / Double.pi
+    }
 }
 
 extension BinaryFloatingPoint {
     public static func |- (left: Self, right: Self) -> Self {
         return (left - right) / 2
+    }
+
+    public var degreesToRadians: Self {
+        return self * .pi / 180
+    }
+
+    public var radiansToDegrees: Self {
+        return self * 180 / .pi
     }
 }
 
@@ -30,4 +46,3 @@ extension BinaryInteger {
         return formatter.string(fromByteCount: numericCast(self))
     }
 }
-

@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIImageView {
-    public static func autolayoutView(image: UIImage) -> Self {
+    public static func autoLayoutView(image: UIImage) -> Self {
         let imageView = self.autoLayoutView()
         imageView.image = image
 

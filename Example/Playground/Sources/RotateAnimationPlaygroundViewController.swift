@@ -31,7 +31,7 @@ class RotateAnimationPlaygroundViewController: PlaygroundViewController {
     }()
 
     private let imageView: UIImageView = {
-        let imageView = UIImageView.autolayoutView(image: UIImage(named: "spinner")!)
+        let imageView = UIImageView.autoLayoutView(image: "spinner".image)
         imageView.contentMode = .scaleAspectFit
 
         return imageView

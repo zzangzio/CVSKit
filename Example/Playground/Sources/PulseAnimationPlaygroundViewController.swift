@@ -31,7 +31,7 @@ class PulseAnimationPlaygroundViewController: PlaygroundViewController {
     }()
 
     private let imageView: UIImageView = {
-        let imageView = UIImageView.autolayoutView(image: UIImage(named: "pulse")!)
+        let imageView = UIImageView.autoLayoutView(image: "pulse".image)
         imageView.contentMode = .scaleAspectFit
 
         return imageView
