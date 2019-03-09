@@ -40,7 +40,15 @@ extension String {
     public var trimming: String {
         return trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
-    
+
+    public var trimmingTrail: String {
+        return replacingOccurrences(of: "\\s+$", with: "", options: .regularExpression)
+    }
+
+    public var trimmingLead: String {
+        return replacingOccurrences(of: "+$\\s", with: "", options: .regularExpression)
+    }
+
     public func toJsonObject() -> Any? {
         guard let data = data(using: .utf8) else {
             return nil

@@ -139,6 +139,36 @@ extension NSLayoutDimension {
     public static func |= (left: NSLayoutDimension, right: (NSLayoutDimension, CGFloat)) -> NSLayoutConstraint {
         return left.constraint(equalTo: right.0, multiplier: 1, constant: right.1)
     }
+
+    @discardableResult
+    public static func >= (left: NSLayoutDimension, right: NSLayoutDimension) -> NSLayoutConstraint {
+        return left.constraint(greaterThanOrEqualTo: right, multiplier: 1)
+    }
+
+    @discardableResult
+    public static func >= (left: NSLayoutDimension, right: CGFloat) -> NSLayoutConstraint {
+        return left.constraint(greaterThanOrEqualToConstant: right)
+    }
+
+    @discardableResult
+    public static func >= (left: NSLayoutDimension, right: (NSLayoutDimension, CGFloat)) -> NSLayoutConstraint {
+        return left.constraint(greaterThanOrEqualTo: right.0, multiplier: 1, constant: right.1)
+    }
+
+    @discardableResult
+    public static func <= (left: NSLayoutDimension, right: NSLayoutDimension) -> NSLayoutConstraint {
+        return left.constraint(lessThanOrEqualTo: right, multiplier: 1)
+    }
+
+    @discardableResult
+    public static func <= (left: NSLayoutDimension, right: CGFloat) -> NSLayoutConstraint {
+        return left.constraint(lessThanOrEqualToConstant: right)
+    }
+
+    @discardableResult
+    public static func <= (left: NSLayoutDimension, right: (NSLayoutDimension, CGFloat)) -> NSLayoutConstraint {
+        return left.constraint(lessThanOrEqualTo: right.0, multiplier: 1, constant: right.1)
+    }
 }
 
 extension NSLayoutXAxisAnchor {
@@ -151,6 +181,26 @@ extension NSLayoutXAxisAnchor {
     public static func |= (left: NSLayoutXAxisAnchor, right: (NSLayoutXAxisAnchor, CGFloat)) -> NSLayoutConstraint {
         return left.constraint(equalTo: right.0, constant: right.1)
     }
+
+    @discardableResult
+    public static func >= (left: NSLayoutXAxisAnchor, right: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
+        return left.constraint(greaterThanOrEqualTo: right)
+    }
+
+    @discardableResult
+    public static func >= (left: NSLayoutXAxisAnchor, right: (NSLayoutXAxisAnchor, CGFloat)) -> NSLayoutConstraint {
+        return left.constraint(greaterThanOrEqualTo: right.0, constant: right.1)
+    }
+
+    @discardableResult
+    public static func <= (left: NSLayoutXAxisAnchor, right: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
+        return left.constraint(lessThanOrEqualTo: right)
+    }
+
+    @discardableResult
+    public static func <= (left: NSLayoutXAxisAnchor, right: (NSLayoutXAxisAnchor, CGFloat)) -> NSLayoutConstraint {
+        return left.constraint(lessThanOrEqualTo: right.0, constant: right.1)
+    }
 }
 
 extension NSLayoutYAxisAnchor {
@@ -162,6 +212,26 @@ extension NSLayoutYAxisAnchor {
     @discardableResult
     public static func |= (left: NSLayoutYAxisAnchor, right: (NSLayoutYAxisAnchor, CGFloat)) -> NSLayoutConstraint {
         return left.constraint(equalTo: right.0, constant: right.1)
+    }
+
+    @discardableResult
+    public static func >= (left: NSLayoutYAxisAnchor, right: NSLayoutYAxisAnchor) -> NSLayoutConstraint {
+        return left.constraint(greaterThanOrEqualTo: right)
+    }
+
+    @discardableResult
+    public static func >= (left: NSLayoutYAxisAnchor, right: (NSLayoutYAxisAnchor, CGFloat)) -> NSLayoutConstraint {
+        return left.constraint(greaterThanOrEqualTo: right.0, constant: right.1)
+    }
+
+    @discardableResult
+    public static func <= (left: NSLayoutYAxisAnchor, right: NSLayoutYAxisAnchor) -> NSLayoutConstraint {
+        return left.constraint(lessThanOrEqualTo: right)
+    }
+
+    @discardableResult
+    public static func <= (left: NSLayoutYAxisAnchor, right: (NSLayoutYAxisAnchor, CGFloat)) -> NSLayoutConstraint {
+        return left.constraint(lessThanOrEqualTo: right.0, constant: right.1)
     }
 }
 

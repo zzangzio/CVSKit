@@ -34,6 +34,18 @@ extension UITableView {
         return Cell()
     }
 
+    public func dequeueReusableHeaderFooterView<Cell: ReusableViewCell>(initializer: (() -> Cell)? = nil) -> Cell {
+        if let cell = dequeueReusableHeaderFooterView(withIdentifier: Cell.reuseIdentifier) as? Cell {
+            return cell
+        }
+
+        if let initializer = initializer {
+            return initializer()
+        }
+
+        return Cell()
+    }
+
     public func hideSeparatorsForEmptyRows() {
         let view = UIView()
         view.backgroundColor = .clear
@@ -53,7 +65,7 @@ extension UITableView {
             newView.tag = hashValue
             addSubview(newView)
 
-            NSLayoutConstraint.activate(newView.allConstraints(equalTo: self))
+            newView.allConstraints(equalTo: backportSafeAreaLayoutGuide).activate()
         }
 
         get {
@@ -66,5 +78,24 @@ extension UITableView {
         setNeedsLayout()
         layoutIfNeeded()
         completion(self)
+    }
+
+    public func beginRefreshing() {
+        guard let refreshControl = self.refreshControl else { return }
+        refreshControl.beginRefreshing()
+
+        let offsetPoint: CGPoint = {
+            if #available(iOS 11, *) {
+                return CGPoint.init(x: 0, y: -adjustedContentInset.top)
+            }
+            return CGPoint.init(x: 0, y: -contentInset.top)
+        }()
+
+        setContentOffset(offsetPoint, animated: true)
+    }
+
+    public func endRefreshing() {
+        guard let refreshControl = self.refreshControl else { return }
+        refreshControl.endRefreshing()
     }
 }
