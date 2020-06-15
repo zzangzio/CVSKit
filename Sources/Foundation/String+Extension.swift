@@ -46,7 +46,8 @@ extension String {
     }
 
     public var trimmingLead: String {
-        return replacingOccurrences(of: "+$\\s", with: "", options: .regularExpression)
+        let whitespaceCharacterSet = CharacterSet.whitespacesAndNewlines
+        return String(self.unicodeScalars.drop(while: { whitespaceCharacterSet.contains($0)}))
     }
 
     public func toJsonObject() -> Any? {
@@ -57,3 +58,17 @@ extension String {
     }
 }
 
+// MARK: - Filtering
+extension String {
+    var filterNumeric: String {
+        return replacingOccurrences(of:"[^0-9|-|.]", with: "", options: .regularExpression)
+    }
+
+    var toInt: Int? {
+        Int(filterNumeric)
+    }
+
+    var toFloat: Float? {
+        Float(filterNumeric)
+    }
+}

@@ -28,17 +28,19 @@ class MainViewController: UIViewController {
     }
 
     private let playgroundViewControllerTypes: [PlaygroundViewController.Type] = {
-        [SwipeDismissPlaygroundViewController.self,
-         LocalizableStringPlaygroundViewController.self,
-         ValidEmailPlaygroundViewController.self,
-         TintImagePlaygroundViewController.self,
-         TransparentImagePlaygroundViewController.self,
-         RotateAnimationPlaygroundViewController.self,
-         PulseAnimationPlaygroundViewController.self,
-         TabControlPlaygroundViewController.self,
-         TabControlManyTabsPlaygroundViewController.self,
-         ChameleonViewPlaygroundViewController.self,
-         CircularProgressPlaygroundViewController.self]
+        [
+            LocalizableStringPlaygroundViewController.self,
+            ValidEmailPlaygroundViewController.self,
+            TintImagePlaygroundViewController.self,
+            TransparentImagePlaygroundViewController.self,
+            RotateAnimationPlaygroundViewController.self,
+            PulseAnimationPlaygroundViewController.self,
+            TabControlPlaygroundViewController.self,
+            TabControlManyTabsPlaygroundViewController.self,
+            ChameleonViewPlaygroundViewController.self,
+            CircularProgressPlaygroundViewController.self,
+            FragleWindowViewController.self
+        ]
     }()
 }
 

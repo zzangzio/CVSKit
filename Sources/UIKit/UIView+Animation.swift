@@ -9,9 +9,11 @@
 import UIKit
 
 extension UIView {
-    public func startRotating(clockwise: Bool = true,
-                              duration: Double = 1,
-                              repeatCount: Float = .infinity) {
+    public func startRotating(
+        clockwise: Bool = true,
+        duration: Double = 1,
+        repeatCount: Float = .infinity
+    ) {
         let keyPath = "transform.rotation"
         guard layer.animation(forKey: keyPath) == nil else { return }
 
@@ -32,10 +34,12 @@ extension UIView {
         layer.removeAnimation(forKey: keyPath)
     }
 
-    public func startPulse(fromScale: CGFloat = 1,
-                           toScale: CGFloat = 1.1,
-                           duration: CFTimeInterval = 0.2,
-                           repeatCount: Float = .infinity) {
+    public func startPulse(
+        fromScale: CGFloat = 1,
+        toScale: CGFloat = 1.1,
+        duration: CFTimeInterval = 0.2,
+        repeatCount: Float = .infinity
+    ) {
         let keyPath = "transform.scale"
         guard layer.animation(forKey: keyPath) == nil else { return }
 

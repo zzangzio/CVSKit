@@ -13,4 +13,8 @@ extension CGRect {
         guard intersection.size != .zero else { return 0 }
         return intersection.size.area / size.area
     }
+
+    public var center: CGPoint {
+        return CGPoint(x: midX, y: midY)
+    }
 }

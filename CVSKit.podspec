@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'CVSKit'
-    s.version          = '0.6.3'
+    s.version          = '0.7.0'
     s.summary          = 'CVSKit is a collection of Swift extensions and utility.'
     s.description      = <<-DESC
     CVSKit is a collection of Swift extensions and utility for better programming.
@@ -13,8 +13,8 @@ Pod::Spec.new do |s|
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'zzangzio' => 'zzangzio@gmail.com' }
 
-    s.platform     = :ios, '10.0'
-    s.swift_version = '4.2'
+    s.platform     = :ios, '11.1'
+    s.swift_version = '5.0'
     s.requires_arc = true
     s.source       = { git: 'https://github.com/zzangzio/CVSKit.git', tag: s.version.to_s }
     s.source_files = 'Sources/**/*'

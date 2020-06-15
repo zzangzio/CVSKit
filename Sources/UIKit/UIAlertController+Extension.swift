@@ -22,8 +22,12 @@ extension UIAlertController {
         }
     }
 
-    public static func actionSheet(withTitle title: String?, message: String?,
-                                   sourceView: UIView, sourceRect: CGRect) -> UIAlertController {
+    public static func actionSheet(
+        withTitle title: String?,
+        message: String?,
+        sourceView: UIView,
+        sourceRect: CGRect
+    ) -> UIAlertController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         alertController.popoverPresentationController?.sourceView = sourceView
         alertController.popoverPresentationController?.sourceRect = sourceRect
@@ -33,24 +37,30 @@ extension UIAlertController {
 
     // Action
     @discardableResult
-    public func addDefaultAction(title: String,
-                                 handler: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
+    public func addDefaultAction(
+        title: String,
+        handler: ((UIAlertAction) -> Void)? = nil
+    ) -> UIAlertController {
         let action = UIAlertAction(title: title, style: .default, handler: handler)
         addAction(action)
         return self
     }
 
     @discardableResult
-    public func addCancelAction(title: String,
-                                handler: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
+    public func addCancelAction(
+        title: String,
+        handler: ((UIAlertAction) -> Void)? = nil
+    ) -> UIAlertController {
         let action = UIAlertAction(title: title, style: .cancel, handler: handler)
         addAction(action)
         return self
     }
 
     @discardableResult
-    public func addDestructiveAction(title: String,
-                                     handler: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
+    public func addDestructiveAction(
+        title: String,
+        handler: ((UIAlertAction) -> Void)? = nil
+    ) -> UIAlertController {
         let action = UIAlertAction(title: title, style: .destructive, handler: handler)
         addAction(action)
         return self

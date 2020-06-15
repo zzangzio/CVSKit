@@ -81,7 +81,7 @@ extension TintImagePlaygroundViewController: TintColorButtonsDelegate {
     }
 }
 
-fileprivate protocol TintColorButtonsDelegate: NSObjectProtocol {
+fileprivate protocol TintColorButtonsDelegate: AnyObject {
     func tintColorButtons(_ buttons: TintColorButtons, didTapButtonWith color: UIColor)
 }
 

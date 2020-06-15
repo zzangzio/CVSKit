@@ -13,4 +13,13 @@ extension UIScrollView {
         guard #available(iOS 11, *) else { return contentInset }
         return adjustedContentInset
     }
+
+    public var visibleRect: CGRect {
+        return CGRect(
+            x: contentInset.left + contentOffset.x,
+            y: contentInset.top + contentOffset.y,
+            width: bounds.width - contentInset.left - contentInset.right,
+            height: bounds.height - contentInset.top - contentInset.bottom
+        )
+    }
 }

@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		860279C821CDFD65006EAA25 /* UIViewController+SwipeDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860279C721CDFD65006EAA25 /* UIViewController+SwipeDismiss.swift */; };
-		860279E021CE557C006EAA25 /* SwipeDismissPlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860279DF21CE557C006EAA25 /* SwipeDismissPlaygroundViewController.swift */; };
 		860279E321CE7543006EAA25 /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860279E121CE74DF006EAA25 /* UIScrollView+Extension.swift */; };
-		860279E521CE757E006EAA25 /* SwipeDismissTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860279C921CDFDD3006EAA25 /* SwipeDismissTransitioningDelegate.swift */; };
+		8635B1F42404E2F100FC3612 /* MarqueeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8635B1F32404E2F100FC3612 /* MarqueeView.swift */; };
 		86772CE821BBCF2F001CCDF8 /* CGSize+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772CE621BBCF2F001CCDF8 /* CGSize+Extension.swift */; };
 		86772CE921BBCF2F001CCDF8 /* CGRect+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772CE721BBCF2F001CCDF8 /* CGRect+Extension.swift */; };
 		86772D0821BBD0FD001CCDF8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D0221BBD0FD001CCDF8 /* UIImageView+Extension.swift */; };
@@ -44,6 +42,17 @@
 		86772D9721BD633D001CCDF8 /* RotateAnimationPlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D9621BD633D001CCDF8 /* RotateAnimationPlaygroundViewController.swift */; };
 		86772D9921BD6390001CCDF8 /* PlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D9821BD6390001CCDF8 /* PlaygroundViewController.swift */; };
 		86772D9B21BD6A24001CCDF8 /* PulseAnimationPlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86772D9A21BD6A24001CCDF8 /* PulseAnimationPlaygroundViewController.swift */; };
+		8685C94E24978A0A00412AF7 /* DelayPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8685C94D24978A0A00412AF7 /* DelayPerformer.swift */; };
+		8685C95024978A5D00412AF7 /* ThrottlePerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8685C94F24978A5D00412AF7 /* ThrottlePerformer.swift */; };
+		8685C95224978AB200412AF7 /* LazyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8685C95124978AB200412AF7 /* LazyLoader.swift */; };
+		8685C9542497921F00412AF7 /* ViewRecycler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8685C9532497921F00412AF7 /* ViewRecycler.swift */; };
+		8685C956249793E600412AF7 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8685C955249793E600412AF7 /* UICollectionView+Extension.swift */; };
+		8685C958249795D300412AF7 /* UIImage+Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8685C957249795D300412AF7 /* UIImage+Face.swift */; };
+		8685C95A2497966400412AF7 /* TapAndHoldGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8685C9592497966400412AF7 /* TapAndHoldGestureRecognizer.swift */; };
+		8685C95C2497977300412AF7 /* ScalingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8685C95B2497977300412AF7 /* ScalingView.swift */; };
+		8685C95E2497998800412AF7 /* ChatViewSizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8685C95D2497998800412AF7 /* ChatViewSizeCalculator.swift */; };
+		86BE814023FB8A8400303EDD /* FragleWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE813F23FB8A8400303EDD /* FragleWindowViewController.swift */; };
+		86BE814223FB8C7A00303EDD /* FragileWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE814123FB8C7A00303EDD /* FragileWindow.swift */; };
 		86DDD2D121B3804E0073E652 /* CVSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 86DDD2CF21B3804E0073E652 /* CVSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86DDD2E121B417080073E652 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDD2D921B417080073E652 /* UIImage+Extension.swift */; };
 		86DDD2E221B417080073E652 /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDD2DA21B417080073E652 /* UIEdgeInsets+Extension.swift */; };
@@ -97,10 +106,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		860279C721CDFD65006EAA25 /* UIViewController+SwipeDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SwipeDismiss.swift"; sourceTree = "<group>"; };
-		860279C921CDFDD3006EAA25 /* SwipeDismissTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDismissTransitioningDelegate.swift; sourceTree = "<group>"; };
-		860279DF21CE557C006EAA25 /* SwipeDismissPlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDismissPlaygroundViewController.swift; sourceTree = "<group>"; };
 		860279E121CE74DF006EAA25 /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		8635B1F32404E2F100FC3612 /* MarqueeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarqueeView.swift; sourceTree = "<group>"; };
 		86772CE621BBCF2F001CCDF8 /* CGSize+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Extension.swift"; sourceTree = "<group>"; };
 		86772CE721BBCF2F001CCDF8 /* CGRect+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Extension.swift"; sourceTree = "<group>"; };
 		86772CEE21BBD030001CCDF8 /* Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +143,17 @@
 		86772D9621BD633D001CCDF8 /* RotateAnimationPlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateAnimationPlaygroundViewController.swift; sourceTree = "<group>"; };
 		86772D9821BD6390001CCDF8 /* PlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundViewController.swift; sourceTree = "<group>"; };
 		86772D9A21BD6A24001CCDF8 /* PulseAnimationPlaygroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseAnimationPlaygroundViewController.swift; sourceTree = "<group>"; };
+		8685C94D24978A0A00412AF7 /* DelayPerformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayPerformer.swift; sourceTree = "<group>"; };
+		8685C94F24978A5D00412AF7 /* ThrottlePerformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrottlePerformer.swift; sourceTree = "<group>"; };
+		8685C95124978AB200412AF7 /* LazyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyLoader.swift; sourceTree = "<group>"; };
+		8685C9532497921F00412AF7 /* ViewRecycler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecycler.swift; sourceTree = "<group>"; };
+		8685C955249793E600412AF7 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		8685C957249795D300412AF7 /* UIImage+Face.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Face.swift"; sourceTree = "<group>"; };
+		8685C9592497966400412AF7 /* TapAndHoldGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAndHoldGestureRecognizer.swift; sourceTree = "<group>"; };
+		8685C95B2497977300412AF7 /* ScalingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalingView.swift; sourceTree = "<group>"; };
+		8685C95D2497998800412AF7 /* ChatViewSizeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewSizeCalculator.swift; sourceTree = "<group>"; };
+		86BE813F23FB8A8400303EDD /* FragleWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragleWindowViewController.swift; sourceTree = "<group>"; };
+		86BE814123FB8C7A00303EDD /* FragileWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FragileWindow.swift; sourceTree = "<group>"; };
 		86DDD2CC21B3804E0073E652 /* CVSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CVSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86DDD2CF21B3804E0073E652 /* CVSKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVSKit.h; sourceTree = "<group>"; };
 		86DDD2D021B3804E0073E652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -189,15 +207,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		860279C621CDFCEF006EAA25 /* InteractiveDismiss */ = {
-			isa = PBXGroup;
-			children = (
-				860279C721CDFD65006EAA25 /* UIViewController+SwipeDismiss.swift */,
-				860279C921CDFDD3006EAA25 /* SwipeDismissTransitioningDelegate.swift */,
-			);
-			name = InteractiveDismiss;
-			sourceTree = "<group>";
-		};
 		86772CE521BBCF2F001CCDF8 /* CoreGraphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,7 +300,7 @@
 				86E9FFD121C4BAEE00CDDCFB /* TabControlManyTabsPlaygroundViewController.swift */,
 				86E9FFD521C4D51B00CDDCFB /* ChameleonViewPlaygroundViewController.swift */,
 				86E9FFEB21C5419400CDDCFB /* CircularProgressPlaygroundViewController.swift */,
-				860279DF21CE557C006EAA25 /* SwipeDismissPlaygroundViewController.swift */,
+				86BE813F23FB8A8400303EDD /* FragleWindowViewController.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -303,6 +312,16 @@
 				86772D7C21BD213D001CCDF8 /* ActionTableViewCell.swift */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		8685C94C249789F300412AF7 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				8685C94D24978A0A00412AF7 /* DelayPerformer.swift */,
+				8685C94F24978A5D00412AF7 /* ThrottlePerformer.swift */,
+				8685C95124978AB200412AF7 /* LazyLoader.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		86DDD2C221B3804E0073E652 = {
@@ -361,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				86E9FFC821C492FD00CDDCFB /* Extension */,
+				8685C94C249789F300412AF7 /* Util */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -402,6 +422,8 @@
 				86772D0521BBD0FD001CCDF8 /* UIBarButtonItem+Extension.swift */,
 				86772D0321BBD0FD001CCDF8 /* UIGestureRecognizer+Extension.swift */,
 				86772D2121BCD9EA001CCDF8 /* UIAlertController+Extension.swift */,
+				8685C955249793E600412AF7 /* UICollectionView+Extension.swift */,
+				8685C957249795D300412AF7 /* UIImage+Face.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -432,13 +454,18 @@
 		86E9FFCA21C4932D00CDDCFB /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				860279C621CDFCEF006EAA25 /* InteractiveDismiss */,
 				86E9FFCB21C496A400CDDCFB /* HardwareModel.swift */,
 				86772D1721BBD984001CCDF8 /* SensitiveControl.swift */,
 				86E9FFCD21C4996500CDDCFB /* TabControlView.swift */,
 				86E9FFD321C4CFFE00CDDCFB /* ChameleonView.swift */,
 				86E9FFDA21C4E10100CDDCFB /* HorizontalPagingView.swift */,
 				86E9FFE921C5401A00CDDCFB /* CircularProgressView.swift */,
+				86BE814123FB8C7A00303EDD /* FragileWindow.swift */,
+				8635B1F32404E2F100FC3612 /* MarqueeView.swift */,
+				8685C9532497921F00412AF7 /* ViewRecycler.swift */,
+				8685C9592497966400412AF7 /* TapAndHoldGestureRecognizer.swift */,
+				8685C95B2497977300412AF7 /* ScalingView.swift */,
+				8685C95D2497998800412AF7 /* ChatViewSizeCalculator.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -524,9 +551,11 @@
 				TargetAttributes = {
 					86772CED21BBD030001CCDF8 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1150;
 					};
 					86DDD2CB21B3804E0073E652 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1150;
 					};
 					86DDD30721B4217B0073E652 = {
 						CreatedOnToolsVersion = 10.0;
@@ -588,6 +617,7 @@
 			files = (
 				86772D9721BD633D001CCDF8 /* RotateAnimationPlaygroundViewController.swift in Sources */,
 				86E9FFE821C538F800CDDCFB /* MainViewController.swift in Sources */,
+				86BE814023FB8A8400303EDD /* FragleWindowViewController.swift in Sources */,
 				86E9FFD021C4A06500CDDCFB /* TabControlPlaygroundViewController.swift in Sources */,
 				86772D7F21BD26F0001CCDF8 /* ValidEmailPlaygroundViewController.swift in Sources */,
 				86E9FFD221C4BAEE00CDDCFB /* TabControlManyTabsPlaygroundViewController.swift in Sources */,
@@ -597,7 +627,6 @@
 				86772D8121BD50F3001CCDF8 /* TintImagePlaygroundViewController.swift in Sources */,
 				86772D9B21BD6A24001CCDF8 /* PulseAnimationPlaygroundViewController.swift in Sources */,
 				86772D6321BCEFC2001CCDF8 /* AppDelegate.swift in Sources */,
-				860279E021CE557C006EAA25 /* SwipeDismissPlaygroundViewController.swift in Sources */,
 				86772D9921BD6390001CCDF8 /* PlaygroundViewController.swift in Sources */,
 				86772D7421BD1B3B001CCDF8 /* LocalizableStringPlaygroundViewController.swift in Sources */,
 				86772D7D21BD213D001CCDF8 /* ActionTableViewCell.swift in Sources */,
@@ -608,6 +637,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8685C956249793E600412AF7 /* UICollectionView+Extension.swift in Sources */,
+				86BE814223FB8C7A00303EDD /* FragileWindow.swift in Sources */,
 				86772CE921BBCF2F001CCDF8 /* CGRect+Extension.swift in Sources */,
 				86772D4D21BCE8AE001CCDF8 /* Date+Extension.swift in Sources */,
 				86772D0D21BBD0FD001CCDF8 /* UIView+Extension.swift in Sources */,
@@ -619,26 +650,33 @@
 				86DDD2E621B417080073E652 /* DispatchQueue+Extension.swift in Sources */,
 				86772D0921BBD0FD001CCDF8 /* UIGestureRecognizer+Extension.swift in Sources */,
 				86E9FFEA21C5401A00CDDCFB /* CircularProgressView.swift in Sources */,
-				860279C821CDFD65006EAA25 /* UIViewController+SwipeDismiss.swift in Sources */,
 				86772D0C21BBD0FD001CCDF8 /* UIDevice+Extension.swift in Sources */,
 				86772D2021BBE8E4001CCDF8 /* String+Extension.swift in Sources */,
 				86E9FFE321C51D6300CDDCFB /* HorizontalPagingView.swift in Sources */,
-				860279E521CE757E006EAA25 /* SwipeDismissTransitioningDelegate.swift in Sources */,
+				8685C95024978A5D00412AF7 /* ThrottlePerformer.swift in Sources */,
+				8685C95224978AB200412AF7 /* LazyLoader.swift in Sources */,
 				86772D1C21BBDFC8001CCDF8 /* UILabel+Extension.swift in Sources */,
 				86772D0B21BBD0FD001CCDF8 /* UIBarButtonItem+Extension.swift in Sources */,
 				86772D1621BBD69F001CCDF8 /* UIButton+Extension.swift in Sources */,
+				8685C95C2497977300412AF7 /* ScalingView.swift in Sources */,
 				86DDD2E721B417080073E652 /* Numeric+Extension.swift in Sources */,
 				86772D1421BBD53C001CCDF8 /* UITableView+Extension.swift in Sources */,
 				86DDD2E121B417080073E652 /* UIImage+Extension.swift in Sources */,
 				86E9FFC621C4925300CDDCFB /* Comparable+Extension.swift in Sources */,
 				86E9FFDF21C51BC300CDDCFB /* ChameleonView.swift in Sources */,
 				86772D2221BCD9EA001CCDF8 /* UIAlertController+Extension.swift in Sources */,
+				8685C958249795D300412AF7 /* UIImage+Face.swift in Sources */,
+				8685C95A2497966400412AF7 /* TapAndHoldGestureRecognizer.swift in Sources */,
+				8685C9542497921F00412AF7 /* ViewRecycler.swift in Sources */,
 				86772D1821BBD984001CCDF8 /* SensitiveControl.swift in Sources */,
 				86772D0A21BBD0FD001CCDF8 /* UIView+Animation.swift in Sources */,
 				860279E321CE7543006EAA25 /* UIScrollView+Extension.swift in Sources */,
+				8635B1F42404E2F100FC3612 /* MarqueeView.swift in Sources */,
+				8685C94E24978A0A00412AF7 /* DelayPerformer.swift in Sources */,
 				86772CE821BBCF2F001CCDF8 /* CGSize+Extension.swift in Sources */,
 				86772D1E21BBE2A2001CCDF8 /* OptionSet+Extension.swift in Sources */,
 				86DDD2E521B417080073E652 /* Collection+Extension.swift in Sources */,
+				8685C95E2497998800412AF7 /* ChatViewSizeCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,14 +726,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2T9R5FA7PV;
 				INFOPLIST_FILE = "Playground/Supporting files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzangzio.Playground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -708,14 +746,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2T9R5FA7PV;
 				INFOPLIST_FILE = "Playground/Supporting files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzangzio.Playground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -773,7 +811,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -832,7 +870,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -857,7 +895,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = CVSKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -867,7 +905,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = singlefile;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -885,7 +923,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = CVSKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -894,7 +932,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzangzio.CVSKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

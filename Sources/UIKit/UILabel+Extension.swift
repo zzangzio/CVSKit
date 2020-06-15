@@ -40,11 +40,13 @@ extension UILabel {
 // MARK: - Measure
 private var measureLabel = UILabel()
 extension UILabel {
-    public static func measureSize(withText text: String,
-                                   font: UIFont,
-                                   numberOfLines: Int,
-                                   constrainedWidth: CGFloat,
-                                   lineBreakMode: NSLineBreakMode = .byTruncatingTail) -> CGSize {
+    public static func measureSize(
+        withText text: String,
+        font: UIFont,
+        numberOfLines: Int,
+        constrainedWidth: CGFloat,
+        lineBreakMode: NSLineBreakMode = .byTruncatingTail
+    ) -> CGSize {
         measureLabel.text = text
         measureLabel.font = font
         measureLabel.numberOfLines = numberOfLines
@@ -54,10 +56,12 @@ extension UILabel {
         return measureLabel.size
     }
 
-    static func measureSize(withAttributedString string: NSAttributedString,
-                            numberOfLines: Int,
-                            constrainedWidth: CGFloat,
-                            lineBreakMode: NSLineBreakMode = .byTruncatingTail) -> CGSize {
+    public static func measureSize(
+        withAttributedString string: NSAttributedString,
+        numberOfLines: Int,
+        constrainedWidth: CGFloat,
+        lineBreakMode: NSLineBreakMode = .byTruncatingTail
+    ) -> CGSize {
         measureLabel.attributedText = string
         measureLabel.numberOfLines = numberOfLines
         measureLabel.lineBreakMode = lineBreakMode

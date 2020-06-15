@@ -114,7 +114,6 @@ public enum HardwareModel: String {
 
         case "iPad6,3", "iPad6,4", "iPad6,7", "iPad6,8":
             self = .iPadPro
-
         // pod
         case "iPod1,1":
             self = .iPod1G

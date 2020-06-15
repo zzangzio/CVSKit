@@ -276,9 +276,11 @@ extension UIView: LayoutAnchorProvider {
 
 extension UIView {
     @discardableResult
-    public func bottomLine(_ height: CGFloat = 1,
-                           out: Bool = false,
-                           configure: ((UIImageView) -> Void)? = nil) -> UIImageView {
+    public func bottomLine(
+        _ height: CGFloat = 1,
+        out: Bool = false,
+        configure: ((UIImageView) -> Void)? = nil
+    ) -> UIImageView {
         let tag = (hash + 90)
         let view = viewWithTag(tag) as? UIImageView ?? {
             let view = UIImageView()
@@ -294,9 +296,11 @@ extension UIView {
     }
 
     @discardableResult
-    public func topLine(_ height: CGFloat = 1,
-                        out: Bool = false,
-                        configure: ((UIImageView) -> Void)? = nil) -> UIImageView {
+    public func topLine(
+        _ height: CGFloat = 1,
+        out: Bool = false,
+        configure: ((UIImageView) -> Void)? = nil
+    ) -> UIImageView {
         let tag = (hash + 91)
         let view = viewWithTag(tag) as? UIImageView ?? {
             let view = UIImageView()
@@ -312,9 +316,11 @@ extension UIView {
     }
 
     @discardableResult
-    public func leftLine(_ width: CGFloat = 1,
-                         out: Bool = false,
-                         configure: ((UIImageView) -> Void)? = nil) -> UIImageView {
+    public func leftLine(
+        _ width: CGFloat = 1,
+        out: Bool = false,
+        configure: ((UIImageView) -> Void)? = nil
+    ) -> UIImageView {
         let tag = (hash + 92)
         let view = viewWithTag(tag) as? UIImageView ?? {
             let view = UIImageView()
@@ -330,9 +336,11 @@ extension UIView {
     }
 
     @discardableResult
-    public func rightLine(_ width: CGFloat = 1,
-                          out: Bool = false,
-                          configure: ((UIImageView) -> Void)? = nil) -> UIImageView {
+    public func rightLine(
+        _ width: CGFloat = 1,
+        out: Bool = false,
+        configure: ((UIImageView) -> Void)? = nil
+    ) -> UIImageView {
         let tag = (hash + 93)
         let view = viewWithTag(tag) as? UIImageView ?? {
             let view = UIImageView()

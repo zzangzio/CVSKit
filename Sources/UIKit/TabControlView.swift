@@ -14,10 +14,12 @@ public enum TabControlViewChangedBy {
     case programmably
 }
 
-public protocol TabControlViewDelegate: NSObjectProtocol {
-    func tabControlView(_ tabControlView: TabControlView,
-                        didChangeIndex index: Int,
-                        by: TabControlViewChangedBy)
+public protocol TabControlViewDelegate: AnyObject {
+    func tabControlView(
+        _ tabControlView: TabControlView,
+        didChangeIndex index: Int,
+        by: TabControlViewChangedBy
+    )
 }
 
 open class TabControlView: UIView {
@@ -147,8 +149,8 @@ open class TabControlView: UIView {
 
         let buttonHeight = viewHeight - underLineHeight
         let margin: CGFloat = estimatedWidth > viewWidth ? {
-            scrollView.contentSize = CGSize(width: estimatedWidth, height: viewHeight)
-            return 0
+                scrollView.contentSize = CGSize(width: estimatedWidth, height: viewHeight)
+                return 0
             }() : {
                 scrollView.contentSize = frame.size
                 return (viewWidth - estimatedWidth) / CGFloat(titleButtons.count)

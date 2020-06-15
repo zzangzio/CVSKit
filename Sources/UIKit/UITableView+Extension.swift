@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol ReusableViewCell: NSObjectProtocol {
+public protocol ReusableViewCell {
     static var reuseIdentifier: String { get }
 
     init()
@@ -73,11 +73,23 @@ extension UITableView {
         }
     }
 
+    public func optOutSelfSizingCell() {
+        estimatedRowHeight = 0
+        estimatedSectionHeaderHeight = 0
+        estimatedSectionFooterHeight = 0
+    }
+
     public func reloadData(completion: @escaping (UITableView) -> Void) {
-        reloadData()
-        setNeedsLayout()
-        layoutIfNeeded()
-        completion(self)
+        UIView.animate(
+            withDuration: 0,
+            animations: { [weak self] in
+                self?.reloadData()
+            },
+            completion: { [weak self] _ in
+                guard let self = self else { return }
+                completion(self)
+            }
+        )
     }
 
     public func beginRefreshing() {
