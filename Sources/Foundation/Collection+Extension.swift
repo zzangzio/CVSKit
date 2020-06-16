@@ -7,13 +7,13 @@
 
 import UIKit
 
-extension Array {
-    public subscript(safe index: Int) -> Element? {
+public extension Array {
+    subscript(safe index: Int) -> Element? {
         guard index >= 0, index < count else { return nil }
         return self[index]
     }
 
-    public var any: Element? {
+    var any: Element? {
         let aCount = UInt32(count)
         guard aCount > 0 else { return nil }
 
@@ -21,11 +21,10 @@ extension Array {
     }
 }
 
-
-extension Collection {
-    public func forEachStop(_ body: (Element, Int, inout Bool) throws -> Void) rethrows {
+public extension Collection {
+    func forEachStop(_ body: (Element, Int, inout Bool) throws -> Void) rethrows {
         let enumerate = enumerated()
-        for (index,value) in enumerate {
+        for (index, value) in enumerate {
             var stop = false
             try body(value, index, &stop)
 
@@ -34,14 +33,14 @@ extension Collection {
     }
 }
 
-extension Dictionary {
-    public static func += (left: inout [Key: Value], right: [Key: Value]) {
+public extension Dictionary {
+    static func += (left: inout [Key: Value], right: [Key: Value]) {
         for (k, v) in right {
             left.updateValue(v, forKey: k)
         }
     }
 
-    public static func + (left: [Key: Value], right: [Key: Value]) -> [Key: Value] {
+    static func + (left: [Key: Value], right: [Key: Value]) -> [Key: Value] {
         var merged = [Key: Value]()
         for (k, v) in left {
             merged[k] = v
@@ -52,29 +51,30 @@ extension Dictionary {
     }
 }
 
-//public func += <K, V> (left: inout [K:V], right: [K:V]) {
+// public func += <K, V> (left: inout [K:V], right: [K:V]) {
 //    for (k, v) in right {
 //        left.updateValue(v, forKey: k)
 //    }
-//}
+// }
 //
-//public func + <K, V> (left: [K:V], right: [K:V]) -> [K:V] {
+// public func + <K, V> (left: [K:V], right: [K:V]) -> [K:V] {
 //    var merged = [K:V]()
 //    for (k, v) in left {
 //        merged[k] = v
 //    }
 //    merged += right
 //    return merged
-//}
+// }
 
 // MARK: - Json
-extension Array {
-    public func toJson(prettyPrint: Bool = false) -> String? {
+
+public extension Array {
+    func toJson(prettyPrint: Bool = false) -> String? {
         guard let data = toJsonData(prettyPrint: prettyPrint) else { return nil }
         return String(data: data, encoding: .utf8)
     }
 
-    public func toJsonData(prettyPrint: Bool = false) -> Data? {
+    func toJsonData(prettyPrint: Bool = false) -> Data? {
         let options: JSONSerialization.WritingOptions = prettyPrint ? .prettyPrinted : []
 
         return {
@@ -88,13 +88,13 @@ extension Array {
     }
 }
 
-extension Dictionary {
-    public func toJson(prettyPrint: Bool = false) -> String? {
+public extension Dictionary {
+    func toJson(prettyPrint: Bool = false) -> String? {
         guard let data = toJsonData(prettyPrint: prettyPrint) else { return nil }
         return String(data: data, encoding: .utf8)
     }
 
-    public func toJsonData(prettyPrint: Bool = false) -> Data? {
+    func toJsonData(prettyPrint: Bool = false) -> Data? {
         let options: JSONSerialization.WritingOptions = prettyPrint ? .prettyPrinted : []
 
         return {

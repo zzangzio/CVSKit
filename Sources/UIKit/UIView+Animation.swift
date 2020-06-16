@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension UIView {
-    public func startRotating(
+public extension UIView {
+    func startRotating(
         clockwise: Bool = true,
         duration: Double = 1,
         repeatCount: Float = .infinity
@@ -28,13 +28,13 @@ extension UIView {
         layer.add(animation, forKey: keyPath)
     }
 
-    public func stopRotating() {
+    func stopRotating() {
         let keyPath = "transform.rotation"
         guard layer.animation(forKey: keyPath) != nil else { return }
         layer.removeAnimation(forKey: keyPath)
     }
 
-    public func startPulse(
+    func startPulse(
         fromScale: CGFloat = 1,
         toScale: CGFloat = 1.1,
         duration: CFTimeInterval = 0.2,
@@ -53,13 +53,13 @@ extension UIView {
         layer.add(animation, forKey: keyPath)
     }
 
-    public func stopPulse() {
+    func stopPulse() {
         let keyPath = "transform.scale"
         guard layer.animation(forKey: keyPath) != nil else { return }
         layer.removeAnimation(forKey: keyPath)
     }
 
-    public func fadeTransition(_ duration: CFTimeInterval = 0.2) {
+    func fadeTransition(_ duration: CFTimeInterval = 0.2) {
         let animation = CATransition()
         animation.timingFunction = CAMediaTimingFunction(
             name: CAMediaTimingFunctionName.easeInEaseOut

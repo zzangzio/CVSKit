@@ -6,8 +6,8 @@
 //  Copyright © 2020년 zzangzio. All rights reserved.
 //
 
-import UIKit
 import CVSKit
+import UIKit
 
 class FragleWindowViewController: PlaygroundViewController {
     override class var playgroundTitle: String {
@@ -26,7 +26,7 @@ class FragleWindowViewController: PlaygroundViewController {
         view.addSubview(label)
         [
             label.centerXAnchor |= view.centerXAnchor,
-            label.centerYAnchor |= view.centerYAnchor
+            label.centerYAnchor |= view.centerYAnchor,
         ].activate()
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
     }

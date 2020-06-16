@@ -8,13 +8,13 @@
 
 import UIKit
 
-extension UIScrollView {
-    public var backportContentInset: UIEdgeInsets {
+public extension UIScrollView {
+    var backportContentInset: UIEdgeInsets {
         guard #available(iOS 11, *) else { return contentInset }
         return adjustedContentInset
     }
 
-    public var visibleRect: CGRect {
+    var visibleRect: CGRect {
         return CGRect(
             x: contentInset.left + contentOffset.x,
             y: contentInset.top + contentOffset.y,

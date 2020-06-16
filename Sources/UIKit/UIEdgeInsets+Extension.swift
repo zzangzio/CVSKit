@@ -7,20 +7,20 @@
 
 import UIKit
 
-extension UIEdgeInsets {
-    public var horizontal: CGFloat {
-        return left + right
+public extension UIEdgeInsets {
+    var horizontal: CGFloat {
+        left + right
     }
-    
-    public var vertical: CGFloat {
-        return top + bottom
+
+    var vertical: CGFloat {
+        top + bottom
     }
-    
-    public var leftTop: CGPoint {
-        return CGPoint(x: left, y: top)
+
+    var leftTop: CGPoint {
+        CGPoint(x: left, y: top)
     }
-    
-    public var rightBottom: CGPoint {
-        return CGPoint(x: right, y: bottom)
+
+    var rightBottom: CGPoint {
+        CGPoint(x: right, y: bottom)
     }
 }

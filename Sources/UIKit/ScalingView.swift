@@ -16,7 +16,7 @@ public protocol ScalingViewContentViewProtocol: AnyObject {
 public class ScalingView<ContentView: ScalingViewContentView>: UIScrollView {
     public let contentView: ContentView
 
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder _: NSCoder) { fatalError("init(coder:) has not been implemented") }
     public init(contentView: ContentView) {
         self.contentView = contentView
         super.init(frame: .zero)
@@ -75,7 +75,7 @@ public class ScalingView<ContentView: ScalingViewContentView>: UIScrollView {
         )
     }
 
-    public override var frame: CGRect {
+    override public var frame: CGRect {
         didSet {
             guard oldValue != frame else { return }
             updateZoomScale()
@@ -83,14 +83,14 @@ public class ScalingView<ContentView: ScalingViewContentView>: UIScrollView {
         }
     }
 
-    public override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         moveContentToCenter()
     }
 
     // workaround :
     // PanningGesture(interactive dismiss) doesn't work when `contentSize.height` and `size.height` is different.
-    public override var contentSize: CGSize {
+    override public var contentSize: CGSize {
         didSet {
             let roundedSize = contentSize.rounded(.down)
             guard contentSize != roundedSize else { return }

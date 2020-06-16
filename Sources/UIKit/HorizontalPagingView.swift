@@ -14,7 +14,7 @@ public protocol HorizontalPagingViewDelegate: UIScrollViewDelegate {
 
 open class HorizontalPagingView: UIScrollView {
     open weak var pagingDelegate: HorizontalPagingViewDelegate?
-    open override var delegate: UIScrollViewDelegate? {
+    override open var delegate: UIScrollViewDelegate? {
         set {
             guard newValue == nil else {
                 fatalError("CVSKit.HorizontalPagingView: Use pagingDelegate instead of delegate.")
@@ -48,22 +48,21 @@ open class HorizontalPagingView: UIScrollView {
     }
 
     open var pageIndex: Int {
-        get {
-            guard width > 0 else { return 0 }
-            return Int(contentOffset.x / width)
-        }
+        guard width > 0 else { return 0 }
+        return Int(contentOffset.x / width)
     }
 
     // MARK: -
-    required public init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    public override init(frame: CGRect) {
+
+    public required init?(coder _: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    override public init(frame: CGRect) {
         super.init(frame: frame)
 
-        self.bounces = false
-        self.showsVerticalScrollIndicator = false
-        self.showsHorizontalScrollIndicator = false
-        self.isPagingEnabled = true
-        self.scrollsToTop = false
+        bounces = false
+        showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
+        isPagingEnabled = true
+        scrollsToTop = false
         super.delegate = self
     }
 
@@ -82,6 +81,7 @@ open class HorizontalPagingView: UIScrollView {
 }
 
 // MARK: - UIScrollViewDelegate
+
 extension HorizontalPagingView: UIScrollViewDelegate {
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         scrollStartPage = pageIndex
@@ -118,10 +118,14 @@ extension HorizontalPagingView: UIScrollViewDelegate {
         pagingDelegate?.scrollViewDidZoom?(scrollView)
     }
 
-    public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        pagingDelegate?.scrollViewWillEndDragging?(scrollView,
-                                                   withVelocity: velocity,
-                                                   targetContentOffset: targetContentOffset)
+    public func scrollViewWillEndDragging(
+        _ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>
+    ) {
+        pagingDelegate?.scrollViewWillEndDragging?(
+            scrollView,
+            withVelocity: velocity,
+            targetContentOffset: targetContentOffset
+        )
     }
 
     public func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {

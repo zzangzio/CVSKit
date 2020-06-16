@@ -6,8 +6,8 @@
 //  Copyright © 2018년 zzangzio. All rights reserved.
 //
 
-import UIKit
 import CVSKit
+import UIKit
 
 class MainViewController: UIViewController {
     private let tableView = UITableView.autoLayoutView(.plain)
@@ -17,11 +17,14 @@ class MainViewController: UIViewController {
 
         view.backgroundColor = .white
         title = "CVSKit Playground"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Main",
-                                                           style: .plain,
-                                                           target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: "Main",
+            style: .plain,
+            target: nil,
+            action: nil
+        )
         view.addSubview(tableView)
-        tableView.allConstraints(equalTo: view.backportSafeAreaLayoutGuide).activate()
+        tableView.allConstraints(equalTo: view.safeAreaLayoutGuide).activate()
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -39,21 +42,22 @@ class MainViewController: UIViewController {
             TabControlManyTabsPlaygroundViewController.self,
             ChameleonViewPlaygroundViewController.self,
             CircularProgressPlaygroundViewController.self,
-            FragleWindowViewController.self
+            FragleWindowViewController.self,
         ]
     }()
 }
 
 // MARK: - UITableViewDataSource
+
 extension MainViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return playgroundViewControllerTypes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ActionTableViewCell = tableView.dequeueReusableCell()
 
-        let playgroundViewControllerType = self.playgroundViewControllerTypes[indexPath.row]
+        let playgroundViewControllerType = playgroundViewControllerTypes[indexPath.row]
         cell.title = playgroundViewControllerType.playgroundTitle
         cell.action = { [weak self] in
             guard let self = self else { return }
@@ -66,6 +70,7 @@ extension MainViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
+
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

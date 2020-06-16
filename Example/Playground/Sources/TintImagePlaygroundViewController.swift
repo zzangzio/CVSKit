@@ -6,8 +6,8 @@
 //  Copyright © 2018년 zzangzio. All rights reserved.
 //
 
-import UIKit
 import CVSKit
+import UIKit
 
 class TintImagePlaygroundViewController: PlaygroundViewController {
     override class var playgroundTitle: String {
@@ -29,25 +29,29 @@ class TintImagePlaygroundViewController: PlaygroundViewController {
     private let tintColorButtons = TintColorButtons.autoLayoutView()
 
     private lazy var defaultConstraints: [NSLayoutConstraint] = {
-        let layoutGuide = view.backportSafeAreaLayoutGuide
-        
-        return [tintColorButtons.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
-                tintColorButtons.centerYAnchor.constraint(equalTo: layoutGuide.centerYAnchor),
-                originImageView.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
-                originImageView.bottomAnchor.constraint(equalTo: tintColorButtons.topAnchor),
-                tintImageView.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
-                tintImageView.topAnchor.constraint(equalTo: tintColorButtons.bottomAnchor)]
+        let layoutGuide = view.safeAreaLayoutGuide
+
+        return [
+            tintColorButtons.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
+            tintColorButtons.centerYAnchor.constraint(equalTo: layoutGuide.centerYAnchor),
+            originImageView.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
+            originImageView.bottomAnchor.constraint(equalTo: tintColorButtons.topAnchor),
+            tintImageView.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
+            tintImageView.topAnchor.constraint(equalTo: tintColorButtons.bottomAnchor),
+        ]
     }()
 
     private lazy var compactConstraints: [NSLayoutConstraint] = {
-        let layoutGuide = view.backportSafeAreaLayoutGuide
+        let layoutGuide = view.safeAreaLayoutGuide
 
-        return [tintColorButtons.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
-                tintColorButtons.centerYAnchor.constraint(equalTo: layoutGuide.centerYAnchor),
-                originImageView.centerYAnchor.constraint(equalTo: layoutGuide.centerYAnchor),
-                originImageView.trailingAnchor.constraint(equalTo: tintColorButtons.leadingAnchor),
-                tintImageView.centerYAnchor.constraint(equalTo: layoutGuide.centerYAnchor),
-                tintImageView.leadingAnchor.constraint(equalTo: tintColorButtons.trailingAnchor)]
+        return [
+            tintColorButtons.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
+            tintColorButtons.centerYAnchor.constraint(equalTo: layoutGuide.centerYAnchor),
+            originImageView.centerYAnchor.constraint(equalTo: layoutGuide.centerYAnchor),
+            originImageView.trailingAnchor.constraint(equalTo: tintColorButtons.leadingAnchor),
+            tintImageView.centerYAnchor.constraint(equalTo: layoutGuide.centerYAnchor),
+            tintImageView.leadingAnchor.constraint(equalTo: tintColorButtons.trailingAnchor),
+        ]
     }()
 
     override func viewDidLoad() {
@@ -66,8 +70,7 @@ class TintImagePlaygroundViewController: PlaygroundViewController {
         if traitCollection.verticalSizeClass == .compact {
             defaultConstraints.deactivate()
             compactConstraints.activate()
-        }
-        else {
+        } else {
             compactConstraints.deactivate()
             defaultConstraints.activate()
         }
@@ -75,28 +78,30 @@ class TintImagePlaygroundViewController: PlaygroundViewController {
 }
 
 extension TintImagePlaygroundViewController: TintColorButtonsDelegate {
-    fileprivate func tintColorButtons(_ buttons: TintColorButtons, didTapButtonWith color: UIColor) {
+    fileprivate func tintColorButtons(_: TintColorButtons, didTapButtonWith color: UIColor) {
         tintImageView.fadeTransition()
         tintImageView.image = originImageView.image?.with(tintColor: color)
     }
 }
 
-fileprivate protocol TintColorButtonsDelegate: AnyObject {
+private protocol TintColorButtonsDelegate: AnyObject {
     func tintColorButtons(_ buttons: TintColorButtons, didTapButtonWith color: UIColor)
 }
 
-fileprivate class TintColorButtons: UIView {
+private class TintColorButtons: UIView {
     private enum Design {
         static let buttonSize = CGSize(width: 50, height: 50)
     }
 
     private lazy var tintColorButtons: [UIButton] = {
-        return [self.createButton(with: 0xFF0000),
-                self.createButton(with: 0x00FF00),
-                self.createButton(with: 0x0000FF),
-                self.createButton(with: 0xFF00FF),
-                self.createButton(with: 0xFFFF00),
-                self.createButton(with: 0x00FFFF)]
+        [
+            self.createButton(with: 0xFF0000),
+            self.createButton(with: 0x00FF00),
+            self.createButton(with: 0x0000FF),
+            self.createButton(with: 0xFF00FF),
+            self.createButton(with: 0xFFFF00),
+            self.createButton(with: 0x00FFFF),
+        ]
     }()
 
     private func createButton(with rgb: Int) -> UIButton {
@@ -104,7 +109,7 @@ fileprivate class TintColorButtons: UIView {
         let color = UIColor(rgb: rgb)
         button.size = Design.buttonSize
 
-        button.setBackgroundImage(UIImage.init(color: color))
+        button.setBackgroundImage(UIImage(color: color))
         button.tag = rgb
         button.addTarget(self, action: #selector(didTapTintColorButton(_:)))
 
@@ -117,7 +122,7 @@ fileprivate class TintColorButtons: UIView {
 
     weak var delegate: TintColorButtonsDelegate?
 
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder _: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -133,13 +138,12 @@ fileprivate class TintColorButtons: UIView {
         invalidateIntrinsicContentSize()
     }
 
-    public override var intrinsicContentSize: CGSize {
+    override public var intrinsicContentSize: CGSize {
         let buttonCount = CGFloat(tintColorButtons.count)
         let buttonSize = Design.buttonSize
         if traitCollection.verticalSizeClass == .compact {
             return CGSize(width: buttonSize.width, height: buttonSize.height * buttonCount)
-        }
-        else {
+        } else {
             return CGSize(width: buttonSize.width * buttonCount, height: buttonSize.height)
         }
     }
@@ -152,8 +156,7 @@ fileprivate class TintColorButtons: UIView {
             tintColorButtons.forEach { $0.origin = CGPoint(x: 0, y: originY)
                 originY += $0.height
             }
-        }
-        else {
+        } else {
             var originX: CGFloat = 0
             tintColorButtons.forEach { $0.origin = CGPoint(x: originX, y: 0)
                 originX += $0.height

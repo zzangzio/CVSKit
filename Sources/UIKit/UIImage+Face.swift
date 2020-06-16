@@ -41,7 +41,7 @@ public extension UIImage {
             ofType: CIDetectorTypeFace,
             context: nil,
             options: [CIDetectorAccuracy: accuracy]
-            ) else { return nil }
+        ) else { return nil }
         return detector.features(in: ciImage)
     }
 
@@ -50,7 +50,7 @@ public extension UIImage {
 
         var largestFace: CIFeature?
 
-        faces.forEachStop { (face, _, _) in
+        faces.forEachStop { face, _, _ in
             guard let compareFace = largestFace else {
                 largestFace = face
                 return
@@ -68,7 +68,7 @@ public extension UIImage {
     func createAroundFacesImage(
         toSize: CGSize,
         accurancy: String = CIDetectorAccuracyHigh
-        ) -> UIImage? {
+    ) -> UIImage? {
         guard let faces = self.faces(accuracy: accurancy), faces.isEmpty == false else { return nil }
 
         let faceBounds = faces.reduce(faces[0].bounds) { (bounds, feature) -> CGRect in
@@ -81,7 +81,7 @@ public extension UIImage {
     func createAroundLargestFaceImage(
         toSize: CGSize,
         accurancy: String = CIDetectorAccuracyHigh
-        ) -> UIImage? {
+    ) -> UIImage? {
         guard let largestFace = largestFace(accuracy: accurancy) else { return nil }
 
         return createCroppedImage(withAround: largestFace.bounds, toSize: toSize)
@@ -95,8 +95,7 @@ public extension UIImage {
         if size.width < toSize.width || size.height < toSize.height {
             let ratio = min(size.width / toSize.width, size.height / toSize.height)
             pixelToSize = CGSize(width: toSize.width * ratio * scale, height: toSize.height * ratio * scale)
-        }
-        else {
+        } else {
             pixelToSize = CGSize(width: toSize.width * scale, height: toSize.height * scale)
         }
 

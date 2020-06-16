@@ -6,11 +6,10 @@
 //  Copyright © 2018년 zzangzio. All rights reserved.
 //
 
-import UIKit
 import CVSKit
+import UIKit
 
 class TransparentImagePlaygroundViewController: PlaygroundViewController {
-
     override class var playgroundTitle: String {
         return "Transparent image"
     }
@@ -43,34 +42,38 @@ class TransparentImagePlaygroundViewController: PlaygroundViewController {
     }()
 
     private lazy var defaultConstraints: [NSLayoutConstraint] = {
-        let layoutGuide = view.backportSafeAreaLayoutGuide
+        let layoutGuide = view.safeAreaLayoutGuide
 
-        return [ transparentLabel.leadingAnchor |= (layoutGuide.leadingAnchor, 30),
-                 transparentLabel.widthAnchor |= (40),
-                 transparentLabel.centerYAnchor |= (layoutGuide.centerYAnchor),
-                 transparentSlider.leadingAnchor |= (transparentLabel.trailingAnchor, 10),
-                 transparentSlider.trailingAnchor |= (layoutGuide.trailingAnchor, -30),
-                 transparentSlider.centerYAnchor |= (layoutGuide.centerYAnchor),
-                 originImageView.centerXAnchor |= (layoutGuide.centerXAnchor),
-                 originImageView.bottomAnchor |= (transparentSlider.topAnchor),
-                 transparentImageView.centerXAnchor |= (layoutGuide.centerXAnchor),
-                 transparentImageView.topAnchor |= (transparentSlider.bottomAnchor)]
+        return [
+            transparentLabel.leadingAnchor |= (layoutGuide.leadingAnchor, 30),
+            transparentLabel.widthAnchor |= 40,
+            transparentLabel.centerYAnchor |= layoutGuide.centerYAnchor,
+            transparentSlider.leadingAnchor |= (transparentLabel.trailingAnchor, 10),
+            transparentSlider.trailingAnchor |= (layoutGuide.trailingAnchor, -30),
+            transparentSlider.centerYAnchor |= layoutGuide.centerYAnchor,
+            originImageView.centerXAnchor |= layoutGuide.centerXAnchor,
+            originImageView.bottomAnchor |= transparentSlider.topAnchor,
+            transparentImageView.centerXAnchor |= layoutGuide.centerXAnchor,
+            transparentImageView.topAnchor |= transparentSlider.bottomAnchor,
+        ]
 
     }()
 
     private lazy var compactConstraints: [NSLayoutConstraint] = {
-        let layoutGuide = view.backportSafeAreaLayoutGuide
+        let layoutGuide = view.safeAreaLayoutGuide
 
-        return [ transparentLabel.widthAnchor |= (40),
-                 transparentLabel.topAnchor |= (layoutGuide.topAnchor, 10),
-                 transparentLabel.centerXAnchor |= layoutGuide.centerXAnchor,
-                 transparentSlider.widthAnchor |= (layoutGuide.heightAnchor, -70),
-                 transparentSlider.centerXAnchor |= layoutGuide.centerXAnchor,
-                 transparentSlider.centerYAnchor |= (layoutGuide.centerYAnchor, 20),
-                 originImageView.centerYAnchor |= (layoutGuide.centerYAnchor),
-                 originImageView.trailingAnchor |= (transparentSlider.centerXAnchor, -10),
-                 transparentImageView.centerYAnchor |= (layoutGuide.centerYAnchor),
-                 transparentImageView.leadingAnchor |= (transparentSlider.centerXAnchor, 10)]
+        return [
+            transparentLabel.widthAnchor |= 40,
+            transparentLabel.topAnchor |= (layoutGuide.topAnchor, 10),
+            transparentLabel.centerXAnchor |= layoutGuide.centerXAnchor,
+            transparentSlider.widthAnchor |= (layoutGuide.heightAnchor, -70),
+            transparentSlider.centerXAnchor |= layoutGuide.centerXAnchor,
+            transparentSlider.centerYAnchor |= (layoutGuide.centerYAnchor, 20),
+            originImageView.centerYAnchor |= layoutGuide.centerYAnchor,
+            originImageView.trailingAnchor |= (transparentSlider.centerXAnchor, -10),
+            transparentImageView.centerYAnchor |= layoutGuide.centerYAnchor,
+            transparentImageView.leadingAnchor |= (transparentSlider.centerXAnchor, 10),
+        ]
     }()
 
     override func viewDidLoad() {
@@ -99,8 +102,7 @@ class TransparentImagePlaygroundViewController: PlaygroundViewController {
             defaultConstraints.deactivate()
             compactConstraints.activate()
             transparentSlider.transform = CGAffineTransform(rotationAngle: -0.5 * .pi)
-        }
-        else {
+        } else {
             compactConstraints.deactivate()
             defaultConstraints.activate()
             transparentSlider.transform = .identity

@@ -48,7 +48,7 @@ public extension UICollectionView {
             newView.tag = hashValue
             addSubview(newView)
 
-            newView.allConstraints(equalTo: backportSafeAreaLayoutGuide).activate()
+            newView.allConstraints(equalTo: safeAreaLayoutGuide).activate()
         }
 
         get {
@@ -60,7 +60,7 @@ public extension UICollectionView {
         guard let refreshControl = self.refreshControl else { return }
         refreshControl.beginRefreshing()
 
-        let offsetPoint = CGPoint.init(x: 0, y: -adjustedContentInset.top)
+        let offsetPoint = CGPoint(x: 0, y: -adjustedContentInset.top)
         setContentOffset(offsetPoint, animated: true)
     }
 

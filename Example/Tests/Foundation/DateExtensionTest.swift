@@ -6,8 +6,8 @@
 //  Copyright © 2018년 zzangzio. All rights reserved.
 //
 
-import XCTest
 @testable import CVSKit
+import XCTest
 
 class DateExtensionTest: XCTestCase {
     func testStartOfDay() {

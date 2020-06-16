@@ -14,15 +14,15 @@ public protocol ReusableViewCell {
     init()
 }
 
-extension UITableView {
-    public static func autoLayoutView(_ style: UITableView.Style) -> Self {
+public extension UITableView {
+    static func autoLayoutView(_ style: UITableView.Style) -> Self {
         let view = self.init(frame: CGRect.zero, style: style)
         view.translatesAutoresizingMaskIntoConstraints = false
 
         return view
     }
 
-    public func dequeueReusableCell<Cell: ReusableViewCell>(initializer: (() -> Cell)? = nil) -> Cell {
+    func dequeueReusableCell<Cell: ReusableViewCell>(initializer: (() -> Cell)? = nil) -> Cell {
         if let cell = dequeueReusableCell(withIdentifier: Cell.reuseIdentifier) as? Cell {
             return cell
         }
@@ -34,7 +34,7 @@ extension UITableView {
         return Cell()
     }
 
-    public func dequeueReusableHeaderFooterView<Cell: ReusableViewCell>(initializer: (() -> Cell)? = nil) -> Cell {
+    func dequeueReusableHeaderFooterView<Cell: ReusableViewCell>(initializer: (() -> Cell)? = nil) -> Cell {
         if let cell = dequeueReusableHeaderFooterView(withIdentifier: Cell.reuseIdentifier) as? Cell {
             return cell
         }
@@ -46,13 +46,13 @@ extension UITableView {
         return Cell()
     }
 
-    public func hideSeparatorsForEmptyRows() {
+    func hideSeparatorsForEmptyRows() {
         let view = UIView()
         view.backgroundColor = .clear
         tableFooterView = view
     }
 
-    public var emptyDataView: UIView? {
+    var emptyDataView: UIView? {
         set {
             let beforeView = viewWithTag(hashValue)
             guard beforeView != newValue else { return }
@@ -65,7 +65,7 @@ extension UITableView {
             newView.tag = hashValue
             addSubview(newView)
 
-            newView.allConstraints(equalTo: backportSafeAreaLayoutGuide).activate()
+            newView.allConstraints(equalTo: safeAreaLayoutGuide).activate()
         }
 
         get {
@@ -73,13 +73,13 @@ extension UITableView {
         }
     }
 
-    public func optOutSelfSizingCell() {
+    func optOutSelfSizingCell() {
         estimatedRowHeight = 0
         estimatedSectionHeaderHeight = 0
         estimatedSectionFooterHeight = 0
     }
 
-    public func reloadData(completion: @escaping (UITableView) -> Void) {
+    func reloadData(completion: @escaping (UITableView) -> Void) {
         UIView.animate(
             withDuration: 0,
             animations: { [weak self] in
@@ -92,21 +92,21 @@ extension UITableView {
         )
     }
 
-    public func beginRefreshing() {
+    func beginRefreshing() {
         guard let refreshControl = self.refreshControl else { return }
         refreshControl.beginRefreshing()
 
         let offsetPoint: CGPoint = {
             if #available(iOS 11, *) {
-                return CGPoint.init(x: 0, y: -adjustedContentInset.top)
+                return CGPoint(x: 0, y: -adjustedContentInset.top)
             }
-            return CGPoint.init(x: 0, y: -contentInset.top)
+            return CGPoint(x: 0, y: -contentInset.top)
         }()
 
         setContentOffset(offsetPoint, animated: true)
     }
 
-    public func endRefreshing() {
+    func endRefreshing() {
         guard let refreshControl = self.refreshControl else { return }
         refreshControl.endRefreshing()
     }

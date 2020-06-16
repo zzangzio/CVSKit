@@ -6,8 +6,8 @@
 //  Copyright © 2018년 zzangzio. All rights reserved.
 //
 
-import UIKit
 import CVSKit
+import UIKit
 
 class TabControlManyTabsPlaygroundViewController: PlaygroundViewController {
     override class var playgroundTitle: String {
@@ -74,10 +74,12 @@ class TabControlManyTabsPlaygroundViewController: PlaygroundViewController {
         addChild(pageViewController)
         view.addSubview(pageViewController.view)
 
-        pageViewController.setViewControllers([viewControllers[0]],
-                                              direction: .forward,
-                                              animated: true,
-                                              completion: nil)
+        pageViewController.setViewControllers(
+            [viewControllers[0]],
+            direction: .forward,
+            animated: true,
+            completion: nil
+        )
 
         view.addSubview(tabControlView)
         tabControlView.titles = viewControllers.map { $0.title! }
@@ -86,28 +88,31 @@ class TabControlManyTabsPlaygroundViewController: PlaygroundViewController {
         let pageView = pageViewController.view!
         pageView.translatesAutoresizingMaskIntoConstraints = false
         pageView.isExclusiveTouch = true
-        let layoutGuide = view.backportSafeAreaLayoutGuide
+        let layoutGuide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate(
-            [ tabControlView.topAnchor |= (layoutGuide.topAnchor),
-              tabControlView.heightAnchor |= (45),
-              tabControlView.leadingAnchor |= (view.leadingAnchor),
-              tabControlView.trailingAnchor |= (view.trailingAnchor),
-              pageView.topAnchor |= (tabControlView.bottomAnchor),
-              pageView.bottomAnchor |= (view.bottomAnchor),
-              pageView.leadingAnchor |= (view.leadingAnchor),
-              pageView.trailingAnchor |= (view.trailingAnchor)])
+            [
+                tabControlView.topAnchor |= layoutGuide.topAnchor,
+                tabControlView.heightAnchor |= 45,
+                tabControlView.leadingAnchor |= view.leadingAnchor,
+                tabControlView.trailingAnchor |= view.trailingAnchor,
+                pageView.topAnchor |= tabControlView.bottomAnchor,
+                pageView.bottomAnchor |= view.bottomAnchor,
+                pageView.leadingAnchor |= view.leadingAnchor,
+                pageView.trailingAnchor |= view.trailingAnchor,
+            ])
     }
 }
 
 // MARK: - UIPageViewControllerDataSource
+
 extension TabControlManyTabsPlaygroundViewController: UIPageViewControllerDataSource {
-    func pageViewController(_ pageViewController: UIPageViewController,
+    func pageViewController(_: UIPageViewController,
                             viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let index = viewControllers.firstIndex(of: viewController) else { return nil }
         return viewControllers[safe: index + 1]
     }
 
-    func pageViewController(_ pageViewController: UIPageViewController,
+    func pageViewController(_: UIPageViewController,
                             viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let index = viewControllers.firstIndex(of: viewController) else { return nil }
         return viewControllers[safe: index - 1]
@@ -115,6 +120,7 @@ extension TabControlManyTabsPlaygroundViewController: UIPageViewControllerDataSo
 }
 
 // MARK: - TabControlViewDelegate
+
 extension TabControlManyTabsPlaygroundViewController: TabControlViewDelegate {
     func tabControlView(_ tabControlView: TabControlView,
                         didChangeIndex index: Int, by: TabControlViewChangedBy) {
@@ -141,17 +147,19 @@ extension TabControlManyTabsPlaygroundViewController: TabControlViewDelegate {
         pageViewController.setViewControllers(
             [viewControllers[index]],
             direction: direction,
-            animated: true) { _ in
-                DispatchQueue.main.after(0.2, execute: { [weak self] in
-                    guard let self = self else { return }
-                    self.tabControlView.isUserInteractionEnabled = true
-                    self.pageViewController.view.isUserInteractionEnabled = true
+            animated: true
+        ) { _ in
+            DispatchQueue.main.after(0.2, execute: { [weak self] in
+                guard let self = self else { return }
+                self.tabControlView.isUserInteractionEnabled = true
+                self.pageViewController.view.isUserInteractionEnabled = true
                 })
         }
     }
 }
 
 // MARK: - UIScrollViewDelegate
+
 extension TabControlManyTabsPlaygroundViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard pageViewController.view.isUserInteractionEnabled else { return }
@@ -160,15 +168,15 @@ extension TabControlManyTabsPlaygroundViewController: UIScrollViewDelegate {
         tabControlView.setProgress(percentComplete, animated: false)
     }
 
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    func scrollViewWillBeginDragging(_: UIScrollView) {
         tabControlView.isUserInteractionEnabled = false
     }
 
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_: UIScrollView) {
         tabControlView.isUserInteractionEnabled = true
     }
 
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidEndDragging(_: UIScrollView, willDecelerate decelerate: Bool) {
         if decelerate == false {
             tabControlView.isUserInteractionEnabled = true
         }

@@ -6,8 +6,8 @@
 //  Copyright © 2018년 zzangzio. All rights reserved.
 //
 
-import UIKit
 import CVSKit
+import UIKit
 
 class ValidEmailPlaygroundViewController: PlaygroundViewController {
     override class var playgroundTitle: String {
@@ -42,17 +42,21 @@ class ValidEmailPlaygroundViewController: PlaygroundViewController {
         view.addSubview(textField)
         view.addSubview(checkButton)
 
-        let layoutGuide = view.backportSafeAreaLayoutGuide
+        let layoutGuide = view.safeAreaLayoutGuide
 
-        [textField.widthAnchor.constraint(equalTo: layoutGuide.widthAnchor, multiplier: 1, constant: -100),
-         textField.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
-         textField.heightAnchor.constraint(equalToConstant: 50),
-         textField.topAnchor.constraint(equalTo: layoutGuide.topAnchor, constant: 50)].activate()
+        [
+            textField.widthAnchor.constraint(equalTo: layoutGuide.widthAnchor, multiplier: 1, constant: -100),
+            textField.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
+            textField.heightAnchor.constraint(equalToConstant: 50),
+            textField.topAnchor.constraint(equalTo: layoutGuide.topAnchor, constant: 50),
+        ].activate()
 
-        [checkButton.widthAnchor.constraint(equalTo: textField.widthAnchor),
-         checkButton.centerXAnchor.constraint(equalTo: textField.centerXAnchor),
-         checkButton.heightAnchor.constraint(equalToConstant: 50),
-         checkButton.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 30)].activate()
+        [
+            checkButton.widthAnchor.constraint(equalTo: textField.widthAnchor),
+            checkButton.centerXAnchor.constraint(equalTo: textField.centerXAnchor),
+            checkButton.heightAnchor.constraint(equalToConstant: 50),
+            checkButton.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 30),
+        ].activate()
 
         checkButton.setAction { [weak self] _ in
             guard let self = self else { return }
@@ -61,8 +65,8 @@ class ValidEmailPlaygroundViewController: PlaygroundViewController {
             let title = email.isValidEmail ? "Valid :)" : "Invalid :("
 
             UIAlertController.alert(withTitle: title, message: nil)
-            .addDefaultAction(title: "ok".localized())
-            .presented(on: self)
+                .addDefaultAction(title: "ok".localized())
+                .presented(on: self)
         }
     }
 

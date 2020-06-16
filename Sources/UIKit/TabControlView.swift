@@ -88,14 +88,15 @@ open class TabControlView: UIView {
     }
 
     // MARK: -
-    public required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+
+    public required init?(coder _: NSCoder) { fatalError("init(coder:) has not been implemented") }
     public convenience init(titles: [String]) {
         self.init(frame: CGRect.zero)
 
         self.titles = titles
     }
 
-    public override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
 
         configureContent()
@@ -110,7 +111,7 @@ open class TabControlView: UIView {
         titleButtons.forEach { $0.removeFromSuperview() }
         titleButtons.removeAll()
 
-        titles.forEachStop { (title, index, _) in
+        titles.forEachStop { title, index, _ in
             let titleButton = UIButton(type: .custom)
             titleButton.setTitle(title, for: UIControl.State())
             titleButton.tag = index
@@ -120,7 +121,7 @@ open class TabControlView: UIView {
         }
     }
 
-    open override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
 
         let viewWidth = frame.width
@@ -132,7 +133,7 @@ open class TabControlView: UIView {
         let sideMargin: CGFloat = self.sideMargin
 
         var maxTitleWidth: CGFloat = 0
-        titleButtons.forEachStop { (button, index, _) in
+        titleButtons.forEachStop { button, _, _ in
             button.titleLabel?.font = titleFont
             button.sizeToFit()
             let titleWidth = (button.frame.width + sideMargin)
@@ -149,25 +150,24 @@ open class TabControlView: UIView {
 
         let buttonHeight = viewHeight - underLineHeight
         let margin: CGFloat = estimatedWidth > viewWidth ? {
-                scrollView.contentSize = CGSize(width: estimatedWidth, height: viewHeight)
-                return 0
-            }() : {
-                scrollView.contentSize = frame.size
-                return (viewWidth - estimatedWidth) / CGFloat(titleButtons.count)
-            }()
+            scrollView.contentSize = CGSize(width: estimatedWidth, height: viewHeight)
+            return 0
+        }() : {
+            scrollView.contentSize = frame.size
+            return (viewWidth - estimatedWidth) / CGFloat(titleButtons.count)
+        }()
 
         underLineOrigins = []
         underLineWidths = []
         var offsetX: CGFloat = 0
-        titleButtons.forEachStop { (button, index, _) in
+        titleButtons.forEachStop { button, _, _ in
             let buttonWidth = button.frame.width + sideMargin + margin
             if UIView.isRightToLeft {
                 button.frame = CGRect(
                     x: viewWidth - (offsetX + buttonWidth),
                     y: 0, width: buttonWidth, height: buttonHeight
                 )
-            }
-            else {
+            } else {
                 button.frame = CGRect(x: offsetX, y: 0, width: buttonWidth, height: buttonHeight)
             }
             button.layoutIfNeeded()
@@ -191,7 +191,7 @@ open class TabControlView: UIView {
 
             let progress = self.progress
             let currentIndex = self.currentIndex
-            self.titleButtons.forEachStop { (button, index, _) in
+            self.titleButtons.forEachStop { button, index, _ in
                 let focused = currentIndex == index
                 button.titleLabel?.font = focused ? self.selectedTitleFont : self.titleFont
                 button.setTitleColor(focused ? self.selectedTitleColor : self.titleColor, for: UIControl.State())
@@ -209,13 +209,11 @@ open class TabControlView: UIView {
                 if currentIndex < nearIndex {
                     underLineOrigin = self.underLineOrigins[currentIndex] +
                         (nearLineOrigin - self.underLineOrigins[currentIndex]) * progress
-                }
-                else {
+                } else {
                     underLineOrigin = self.underLineOrigins[currentIndex] +
                         (self.underLineOrigins[currentIndex] - nearLineOrigin) * progress
                 }
-            }
-            else {
+            } else {
                 underLineWidth = self.underLineWidths[currentIndex]
                 underLineOrigin = self.underLineOrigins[currentIndex]
             }
@@ -234,8 +232,7 @@ open class TabControlView: UIView {
 
         if animated {
             UIView.animate(withDuration: 0.2) { updateLayout() }
-        }
-        else {
+        } else {
             updateLayout()
         }
     }
@@ -245,16 +242,13 @@ open class TabControlView: UIView {
         if (scrollView.contentOffset.x + scrollView.frame.width) < currentButton.frame.maxX {
             let adjustOffset = CGPoint(x: currentButton.frame.maxX - scrollView.frame.width, y: 0)
             scrollView.setContentOffset(adjustOffset, animated: animated)
-        }
-        else if scrollView.contentOffset.x > currentButton.frame.minX {
+        } else if scrollView.contentOffset.x > currentButton.frame.minX {
             let adjustOffset = CGPoint(x: currentButton.frame.minX, y: 0)
             scrollView.setContentOffset(adjustOffset, animated: animated)
-        }
-        else if (scrollView.contentOffset.x + scrollView.frame.width) < underLine.frame.maxX {
+        } else if (scrollView.contentOffset.x + scrollView.frame.width) < underLine.frame.maxX {
             let adjustOffset = CGPoint(x: underLine.frame.maxX - scrollView.frame.width, y: 0)
             scrollView.setContentOffset(adjustOffset, animated: animated)
-        }
-        else if scrollView.contentOffset.x > underLine.frame.minX {
+        } else if scrollView.contentOffset.x > underLine.frame.minX {
             let adjustOffset = CGPoint(x: underLine.frame.minX, y: 0)
             scrollView.setContentOffset(adjustOffset, animated: animated)
         }
@@ -268,21 +262,17 @@ open class TabControlView: UIView {
             self.progress = progress - progress.rounded(.down)
             if (currentIndex + 1) < count {
                 setCurrentIndex(currentIndex + 1, animated: true, by: .progress)
-            }
-            else {
+            } else {
                 layoutButtons(animated: animated, adjusted: true)
             }
-        }
-        else if progress <= -1 {
+        } else if progress <= -1 {
             self.progress = progress - progress.rounded(.up)
             if (currentIndex - 1) >= 0 {
                 setCurrentIndex(currentIndex - 1, animated: true, by: .progress)
-            }
-            else {
+            } else {
                 layoutButtons(animated: animated, adjusted: true)
             }
-        }
-        else {
+        } else {
             self.progress = progress
             layoutButtons(animated: animated, adjusted: true)
         }
@@ -299,7 +289,7 @@ open class TabControlView: UIView {
         setCurrentIndex(index, animated: animated, by: .programmably)
     }
 
-    private(set) open var currentIndex: Int = 0
+    open private(set) var currentIndex: Int = 0
     private func setCurrentIndex(_ index: Int, animated: Bool, by: TabControlViewChangedBy) {
         guard currentIndex != index else { return }
         currentIndex = index
@@ -312,8 +302,9 @@ open class TabControlView: UIView {
     }
 
     // MARK: - handle event
+
     @objc private func didTapTitle(_ button: UIButton) {
-        guard self.isUserInteractionEnabled else { return }
+        guard isUserInteractionEnabled else { return }
         setCurrentIndex(button.tag, animated: true, by: .tapping)
     }
 }

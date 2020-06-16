@@ -8,12 +8,11 @@
 
 import UIKit
 
-extension UIImageView {
-    public static func autoLayoutView(image: UIImage) -> Self {
-        let imageView = self.autoLayoutView()
+public extension UIImageView {
+    static func autoLayoutView(image: UIImage) -> Self {
+        let imageView = autoLayoutView()
         imageView.image = image
 
         return imageView
     }
 }
-

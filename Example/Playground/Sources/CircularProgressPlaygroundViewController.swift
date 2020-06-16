@@ -6,8 +6,8 @@
 //  Copyright © 2018년 zzangzio. All rights reserved.
 //
 
-import UIKit
 import CVSKit
+import UIKit
 
 class CircularProgressPlaygroundViewController: PlaygroundViewController {
     override class var playgroundTitle: String {
@@ -53,19 +53,20 @@ class CircularProgressPlaygroundViewController: PlaygroundViewController {
         view.addSubview(startWithRotateButton)
         view.addSubview(progressLabel)
 
-        NSLayoutConstraint.activate(
-            [ circlarProgress.centerXAnchor |= (view.centerXAnchor),
-              circlarProgress.centerYAnchor |= (view.centerYAnchor, -50),
-              circlarProgress.widthAnchor |= (80),
-              circlarProgress.heightAnchor |= (80),
-              startButton.centerXAnchor |= (view.centerXAnchor),
-              startButton.topAnchor |= (circlarProgress.bottomAnchor, 30),
-              startWithRotateButton.centerXAnchor |= (view.centerXAnchor),
-              startWithRotateButton.topAnchor |= (startButton.bottomAnchor, 20),
-              progressLabel.centerXAnchor |= (circlarProgress.centerXAnchor),
-              progressLabel.centerYAnchor |= (circlarProgress.centerYAnchor)])
+        [
+            circlarProgress.centerXAnchor |= view.centerXAnchor,
+            circlarProgress.centerYAnchor |= (view.centerYAnchor, -50),
+            circlarProgress.widthAnchor |= 80,
+            circlarProgress.heightAnchor |= 80,
+            startButton.centerXAnchor |= view.centerXAnchor,
+            startButton.topAnchor |= (circlarProgress.bottomAnchor, 30),
+            startWithRotateButton.centerXAnchor |= view.centerXAnchor,
+            startWithRotateButton.topAnchor |= (startButton.bottomAnchor, 20),
+            progressLabel.centerXAnchor |= circlarProgress.centerXAnchor,
+            progressLabel.centerYAnchor |= circlarProgress.centerYAnchor,
+        ].activate()
 
-        let progressAction: ((CGFloat, CGFloat) -> Void) = { [weak self] (total, progress) in
+        let progressAction: ((CGFloat, CGFloat) -> Void) = { [weak self] total, progress in
             guard let self = self else { return }
             self.progressLabel.text = String(format: "%d%%", Int(progress * 100 / total))
             UIView.animate(withDuration: 0.2, animations: { [weak self] in
@@ -111,8 +112,10 @@ class CircularProgressPlaygroundViewController: PlaygroundViewController {
         }
     }
 
-    private func startWorking(withProgress progress: @escaping (CGFloat, CGFloat) -> Void,
-                              completion: @escaping () -> Void) {
+    private func startWorking(
+        withProgress progress: @escaping (CGFloat, CGFloat) -> Void,
+        completion: @escaping () -> Void
+    ) {
         let total = CGFloat(5)
         let progresses: [CGFloat] = [0.8, 1.0, 2.2, 2.5, 3.0, 3.2, 3.4, 3.6, 4.0, 4.5, 4.6, 5.0]
         circlarProgress.maxProgress = total

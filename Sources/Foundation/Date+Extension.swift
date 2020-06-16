@@ -34,14 +34,14 @@ public enum DateUnit {
     }
 }
 
-extension Date {
-    public func startOfUnit(_ unit: DateUnit) -> Date {
+public extension Date {
+    func startOfUnit(_ unit: DateUnit) -> Date {
         let startDay = Calendar.current.startOfDay(for: self)
         let dateComponents = Calendar.current.dateComponents(unit.componentsSet, from: startDay)
         return Calendar.current.date(from: dateComponents)!
     }
 
-    public func nextStartOfUnit(_ unit: DateUnit) -> Date {
+    func nextStartOfUnit(_ unit: DateUnit) -> Date {
         return Calendar.current.date(byAdding: unit.addingComponents, to: startOfUnit(unit))!
     }
 }

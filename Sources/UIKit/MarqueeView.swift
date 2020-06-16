@@ -46,8 +46,8 @@ public class MarqueeView: UIView {
     private var userPanning = false
     private let isRightToLeft = UIView.isRightToLeft
 
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    public override init(frame: CGRect) {
+    required init?(coder _: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    override public init(frame: CGRect) {
         super.init(frame: frame)
 
         configureContentView()
@@ -93,8 +93,7 @@ public class MarqueeView: UIView {
             let currentTranslationX = gesture.translation(in: gesture.view).x
             if isRightToLeft {
                 paning(toX: panningStartX + currentTranslationX)
-            }
-            else {
+            } else {
                 paning(toX: panningStartX - currentTranslationX)
             }
         default:
@@ -112,13 +111,13 @@ public class MarqueeView: UIView {
         layoutContentViews()
     }
 
-    public override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         layoutContentViews()
         applyFade()
     }
 
-    public override var intrinsicContentSize: CGSize {
+    override public var intrinsicContentSize: CGSize {
         contentView0.image?.size ?? .zero
     }
 
@@ -145,8 +144,7 @@ public class MarqueeView: UIView {
                 origin: CGPoint(x: originX, y: height |- contentSize.height),
                 size: contentSize
             )
-        }
-        else {
+        } else {
             contentView1.isHidden = false
             currentPanningX = currentPanningX.truncatingRemainder(dividingBy: contentSize.width + spaceOfContents)
             if isRightToLeft {
@@ -159,23 +157,20 @@ public class MarqueeView: UIView {
                         x: contentView0.frame.minX - spaceOfContents - contentSize.width,
                         y: height |- contentSize.height
                     )
-                }
-                else {
+                } else {
                     contentView1.origin = CGPoint(
                         x: contentView0.frame.maxX + spaceOfContents,
                         y: height |- contentSize.height
                     )
                 }
-            }
-            else {
+            } else {
                 contentView0.origin = CGPoint(x: -currentPanningX, y: height |- contentSize.height)
                 if currentPanningX > 0 {
                     contentView1.origin = CGPoint(
                         x: contentView0.frame.maxX + spaceOfContents,
                         y: height |- contentSize.height
                     )
-                }
-                else {
+                } else {
                     contentView1.origin = CGPoint(
                         x: contentView0.frame.minX - spaceOfContents - contentSize.width,
                         y: height |- contentSize.height

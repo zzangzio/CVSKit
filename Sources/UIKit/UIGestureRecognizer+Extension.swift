@@ -8,11 +8,10 @@
 
 import UIKit
 
-extension UIGestureRecognizer {
+public extension UIGestureRecognizer {
+    typealias GestureAction = ((UIGestureRecognizer) -> Void)
 
-    public typealias GestureAction = ((UIGestureRecognizer) -> Void)
-
-    public func setAction(_ action: GestureAction?) {
+    func setAction(_ action: GestureAction?) {
         removeTarget(self, action: #selector(fireAction))
 
         if let action = action {
@@ -40,10 +39,12 @@ private extension UIGestureRecognizer {
         }
 
         set {
-            objc_setAssociatedObject(self,
-                                     &ActionWrapperKey,
-                                     newValue,
-                                     .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(
+                self,
+                &ActionWrapperKey,
+                newValue,
+                .OBJC_ASSOCIATION_RETAIN_NONATOMIC
+            )
         }
     }
 }

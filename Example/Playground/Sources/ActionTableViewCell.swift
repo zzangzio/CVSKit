@@ -6,11 +6,12 @@
 //  Copyright © 2018년 zzangzio. All rights reserved.
 //
 
-import UIKit
 import CVSKit
+import UIKit
 
 class ActionTableViewCell: UITableViewCell, ReusableViewCell {
     // MARK: - ReusableViewCell
+
     static let reuseIdentifier: String = ActionTableViewCell.description()
 
     var title: String? {
@@ -19,8 +20,6 @@ class ActionTableViewCell: UITableViewCell, ReusableViewCell {
     }
 
     var action: (() -> Void)? {
-        didSet {
-
-        }
+        didSet {}
     }
 }

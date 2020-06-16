@@ -6,8 +6,8 @@
 //  Copyright © 2018년 zzangzio. All rights reserved.
 //
 
-import UIKit
 import CVSKit
+import UIKit
 
 class ChameleonViewPlaygroundViewController: PlaygroundViewController {
     override class var playgroundTitle: String {
@@ -77,26 +77,28 @@ class ChameleonViewPlaygroundViewController: PlaygroundViewController {
         view.addSubview(pagingView)
         pagingView.pagingDelegate = self
 
-        tabControlView.titles = pagingView.pages.map{ each -> String in
-            return (each as? UILabel)?.text ?? ""
+        tabControlView.titles = pagingView.pages.map { each -> String in
+            (each as? UILabel)?.text ?? ""
         }
 
         tabControlView.delegate = self
 
-        let layoutGuide = view.backportSafeAreaLayoutGuide
+        let layoutGuide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate(
-            [ tabControlView.topAnchor |= (layoutGuide.topAnchor),
-              tabControlView.heightAnchor |= (45),
-              tabControlView.leadingAnchor |= (view.leadingAnchor),
-              tabControlView.trailingAnchor |= (view.trailingAnchor),
-              chameleonView.topAnchor |= (view.topAnchor),
-              chameleonView.bottomAnchor |= (view.bottomAnchor),
-              chameleonView.leadingAnchor |= (view.leadingAnchor),
-              chameleonView.trailingAnchor |= (view.trailingAnchor),
-              pagingView.topAnchor |= (tabControlView.bottomAnchor),
-              pagingView.bottomAnchor |= (view.bottomAnchor),
-              pagingView.leadingAnchor |= (view.leadingAnchor),
-              pagingView.trailingAnchor |= (view.trailingAnchor)])
+            [
+                tabControlView.topAnchor |= layoutGuide.topAnchor,
+                tabControlView.heightAnchor |= 45,
+                tabControlView.leadingAnchor |= view.leadingAnchor,
+                tabControlView.trailingAnchor |= view.trailingAnchor,
+                chameleonView.topAnchor |= view.topAnchor,
+                chameleonView.bottomAnchor |= view.bottomAnchor,
+                chameleonView.leadingAnchor |= view.leadingAnchor,
+                chameleonView.trailingAnchor |= view.trailingAnchor,
+                pagingView.topAnchor |= tabControlView.bottomAnchor,
+                pagingView.bottomAnchor |= view.bottomAnchor,
+                pagingView.leadingAnchor |= view.leadingAnchor,
+                pagingView.trailingAnchor |= view.trailingAnchor,
+            ])
     }
 
     private var tempPageIndex: Int = 0
@@ -122,12 +124,13 @@ class ChameleonViewPlaygroundViewController: PlaygroundViewController {
 }
 
 // MARK: - HorizontalPagingViewDelegate
+
 extension ChameleonViewPlaygroundViewController: HorizontalPagingViewDelegate {
-    func horizontalPagingView(_ pagingView: HorizontalPagingView, didChangePage pageIndex: Int) {
+    func horizontalPagingView(_ pagingView: HorizontalPagingView, didChangePage _: Int) {
         chameleonView.feel = pagingView.contentOffset.x
     }
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewDidScroll(_: UIScrollView) {
         chameleonView.feel = pagingView.contentOffset.x
 
         guard pagingView.isUserInteractionEnabled else { return }
@@ -135,19 +138,19 @@ extension ChameleonViewPlaygroundViewController: HorizontalPagingViewDelegate {
         tabControlView.setProgressIndex(progressIndex, animated: false)
     }
 
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    func scrollViewWillBeginDragging(_: UIScrollView) {
         tabControlView.isUserInteractionEnabled = false
     }
 
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_: UIScrollView) {
         tabControlView.isUserInteractionEnabled = true
     }
 
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+    func scrollViewDidEndScrollingAnimation(_: UIScrollView) {
         pagingView.isUserInteractionEnabled = true
     }
 
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidEndDragging(_: UIScrollView, willDecelerate decelerate: Bool) {
         if decelerate == false {
             tabControlView.isUserInteractionEnabled = true
         }
@@ -155,8 +158,9 @@ extension ChameleonViewPlaygroundViewController: HorizontalPagingViewDelegate {
 }
 
 // MARK: - TabControlViewDelegate
+
 extension ChameleonViewPlaygroundViewController: TabControlViewDelegate {
-    func tabControlView(_ tabControlView: TabControlView,
+    func tabControlView(_: TabControlView,
                         didChangeIndex index: Int,
                         by: TabControlViewChangedBy) {
         guard by != .progress else { return }

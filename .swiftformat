@@ -1,0 +1,40 @@
+--allman false
+--binarygrouping 4,8
+--closingparen balanced
+--commas always
+--conflictmarkers reject
+--decimalgrouping 3,6
+--elseposition same-line
+--empty void
+--exponentcase uppercase
+--exponentgrouping disabled
+--fractiongrouping disabled
+--fragment false
+--header ignore
+--hexgrouping none
+--hexliteralcase uppercase
+--ifdef indent
+--importgrouping alphabetized
+--indent 4
+--indentcase false
+--linebreaks lf
+--maxwidth none
+--nospaceoperators 
+--nowrapoperators 
+--octalgrouping 4,8
+--operatorfunc spaced
+--patternlet hoist
+--self remove
+--selfrequired 
+--semicolons inline
+--shortoptionals always
+--specifierorder 
+--stripunusedargs always
+--tabwidth unspecified
+--trailingclosures 
+--trimwhitespace always
+--wraparguments before-first
+--wrapcollections before-first
+--wrapparameters preserve
+--xcodeindentation disabled
+--disable blankLinesAroundMark,redundantBackticks,redundantRawValues,redundantSelf,unusedArguments

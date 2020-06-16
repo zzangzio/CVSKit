@@ -7,36 +7,38 @@
 
 import CoreGraphics
 
-extension CGSize {
-    public var rect: CGRect {
+public extension CGSize {
+    var rect: CGRect {
         return CGRect(origin: .zero, size: self)
     }
-    
-    public var area: CGFloat {
+
+    var area: CGFloat {
         return width * height
     }
-    
-    public func resized(
+
+    func resized(
         constrainedPixel: Int,
         scale: CGFloat = UIScreen.main.scale
     ) -> CGSize {
         let pixel = (width * scale) * (height * scale)
         guard pixel > CGFloat(constrainedPixel) else { return self }
         let toScale = CGFloat(constrainedPixel) / pixel
-        return CGSize(width: (width * sqrt(toScale)).rounded(.down),
-                      height: (height * sqrt(toScale)).rounded(.down))
-    }
-    
-    public func resized(toScale: CGFloat) -> CGSize {
-        return CGSize(width: width * toScale, height: height * toScale)
-    }
-    
-    public func resizedAspectFit(fitSize: CGSize) -> CGSize {
-        let ratio = min(fitSize.width / width, fitSize.height / height)
-        return self.resized(toScale: ratio)
+        return CGSize(
+            width: (width * sqrt(toScale)).rounded(.down),
+            height: (height * sqrt(toScale)).rounded(.down)
+        )
     }
 
-    public func rounded(_ rule: FloatingPointRoundingRule) -> CGSize {
+    func resized(toScale: CGFloat) -> CGSize {
+        return CGSize(width: width * toScale, height: height * toScale)
+    }
+
+    func resizedAspectFit(fitSize: CGSize) -> CGSize {
+        let ratio = min(fitSize.width / width, fitSize.height / height)
+        return resized(toScale: ratio)
+    }
+
+    func rounded(_ rule: FloatingPointRoundingRule) -> CGSize {
         CGSize(width: width.rounded(rule), height: height.rounded(rule))
     }
 }

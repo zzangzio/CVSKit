@@ -20,7 +20,7 @@ public class TapAndHoldGestureRecognizer: UIGestureRecognizer {
     private var tapAndHoldState: TapAndHoldState = .ready
     public private(set) var holdPoint: CGPoint?
 
-    public override func reset() {
+    override public func reset() {
         super.reset()
         tapAndHoldState = .ready
         holdPoint = nil
@@ -32,7 +32,7 @@ public class TapAndHoldGestureRecognizer: UIGestureRecognizer {
         return CGPoint(x: location.x - holdPoint.x, y: location.y - holdPoint.y)
     }
 
-    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
         super.touchesBegan(touches, with: event)
         guard touches.count == 1 else {
             state = .failed
@@ -43,7 +43,7 @@ public class TapAndHoldGestureRecognizer: UIGestureRecognizer {
         case .ready:
             tapAndHoldState = .began
         case .waitingHold:
-            delayPerformer.perform {[weak self] in
+            delayPerformer.perform { [weak self] in
                 guard let self = self else { return }
                 self.holdPoint = self.location(in: self.view)
                 self.tapAndHoldState = .hold
@@ -54,7 +54,7 @@ public class TapAndHoldGestureRecognizer: UIGestureRecognizer {
         }
     }
 
-    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
+    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
         super.touchesEnded(touches, with: event)
 
         switch tapAndHoldState {
@@ -72,13 +72,13 @@ public class TapAndHoldGestureRecognizer: UIGestureRecognizer {
         }
     }
 
-    public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
+    override public func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
         super.touchesMoved(touches, with: event)
         guard tapAndHoldState == .hold else { return }
         state = .changed
     }
 
-    public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent) {
+    override public func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent) {
         super.touchesCancelled(touches, with: event)
         delayPerformer.cancel()
     }

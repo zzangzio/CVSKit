@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension UIBarButtonItem {
-    public func setTitleColor(_ color: UIColor?, for: UIControl.State = .normal) {
+public extension UIBarButtonItem {
+    func setTitleColor(_ color: UIColor?, for _: UIControl.State = .normal) {
         var textAttributes: [NSAttributedString.Key: Any] = {
             self.titleTextAttributes(for: .normal) ?? [:]
         }()
@@ -17,7 +17,7 @@ extension UIBarButtonItem {
         setTitleTextAttributes(textAttributes, for: .normal)
     }
 
-    public func setTitleFont(_ font: UIFont?, for: UIControl.State = .normal) {
+    func setTitleFont(_ font: UIFont?, for _: UIControl.State = .normal) {
         var textAttributes: [NSAttributedString.Key: Any] = {
             self.titleTextAttributes(for: .normal) ?? [:]
         }()

@@ -13,9 +13,9 @@ class PlaygroundViewController: UIViewController {
         return "PlaygroundViewController"
     }
 
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder _: NSCoder) { fatalError("init(coder:) has not been implemented") }
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.title = type(of: self).playgroundTitle
+        title = type(of: self).playgroundTitle
     }
 }

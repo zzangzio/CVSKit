@@ -8,21 +8,20 @@
 
 import UIKit
 
-extension UIAlertController {
-    public static func alert(withTitle title: String?, message: String?) -> UIAlertController {
+public extension UIAlertController {
+    static func alert(withTitle title: String?, message: String?) -> UIAlertController {
         return UIAlertController(title: title, message: message, preferredStyle: .alert)
     }
 
-    public static func actionSheet(withTitle title: String?, message: String?) -> UIAlertController {
+    static func actionSheet(withTitle title: String?, message: String?) -> UIAlertController {
         if UIDevice.isPad == false {
             return UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-        }
-        else {
+        } else {
             return UIAlertController(title: title, message: message, preferredStyle: .alert)
         }
     }
 
-    public static func actionSheet(
+    static func actionSheet(
         withTitle title: String?,
         message: String?,
         sourceView: UIView,
@@ -37,7 +36,7 @@ extension UIAlertController {
 
     // Action
     @discardableResult
-    public func addDefaultAction(
+    func addDefaultAction(
         title: String,
         handler: ((UIAlertAction) -> Void)? = nil
     ) -> UIAlertController {
@@ -47,7 +46,7 @@ extension UIAlertController {
     }
 
     @discardableResult
-    public func addCancelAction(
+    func addCancelAction(
         title: String,
         handler: ((UIAlertAction) -> Void)? = nil
     ) -> UIAlertController {
@@ -57,7 +56,7 @@ extension UIAlertController {
     }
 
     @discardableResult
-    public func addDestructiveAction(
+    func addDestructiveAction(
         title: String,
         handler: ((UIAlertAction) -> Void)? = nil
     ) -> UIAlertController {
@@ -66,7 +65,7 @@ extension UIAlertController {
         return self
     }
 
-    public func presented(on viewController: UIViewController) {
+    func presented(on viewController: UIViewController) {
         viewController.present(self, animated: true, completion: nil)
     }
 }

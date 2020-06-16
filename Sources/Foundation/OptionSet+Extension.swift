@@ -8,14 +8,14 @@
 
 import Swift
 
-extension OptionSet where RawValue: FixedWidthInteger {
-    public func forEach(_ body: (Self) throws -> Void) rethrows {
+public extension OptionSet where RawValue: FixedWidthInteger {
+    func forEach(_ body: (Self) throws -> Void) rethrows {
         for each in enumerate() {
             try body(each)
         }
     }
 
-    public func reduce<Result>(_ initialResult: Result, _
+    func reduce<Result>(_ initialResult: Result, _
         nextPartialResult: (Result, Self) throws -> Result) rethrows -> Result {
         var result: Result = initialResult
 
@@ -26,7 +26,7 @@ extension OptionSet where RawValue: FixedWidthInteger {
         return result
     }
 
-    public func enumerate() -> AnySequence<Self> {
+    func enumerate() -> AnySequence<Self> {
         var remainingBits = rawValue
         var bitMask: RawValue = 1
         return AnySequence {

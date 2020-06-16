@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension Comparable {
-    public func boundary(minimum: Self, maximum: Self) -> Self {
+public extension Comparable {
+    func boundary(minimum: Self, maximum: Self) -> Self {
         return max(minimum, min(maximum, self))
     }
 }

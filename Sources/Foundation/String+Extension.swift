@@ -9,12 +9,13 @@
 import UIKit
 
 // MARK: - Convenience Localization
-extension String {
-    public var localized: String {
+
+public extension String {
+    var localized: String {
         return NSLocalizedString(self, comment: self)
     }
 
-    public func localized(with arguments: CVarArg...) -> String {
+    func localized(with arguments: CVarArg...) -> String {
         if arguments.count == 0 {
             return localized
         }
@@ -23,34 +24,35 @@ extension String {
 }
 
 // MARK: - Convenience UIImage
-extension String {
-    public var image: UIImage {
+
+public extension String {
+    var image: UIImage {
         return UIImage(named: self)!
     }
 }
 
-extension String {
-    public var isValidEmail: Bool {
+public extension String {
+    var isValidEmail: Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
 
         let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: self)
     }
 
-    public var trimming: String {
-        return trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+    var trimming: String {
+        trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
 
-    public var trimmingTrail: String {
-        return replacingOccurrences(of: "\\s+$", with: "", options: .regularExpression)
+    var trimmingTrail: String {
+        replacingOccurrences(of: "\\s+$", with: "", options: .regularExpression)
     }
 
-    public var trimmingLead: String {
+    var trimmingLead: String {
         let whitespaceCharacterSet = CharacterSet.whitespacesAndNewlines
-        return String(self.unicodeScalars.drop(while: { whitespaceCharacterSet.contains($0)}))
+        return String(unicodeScalars.drop(while: { whitespaceCharacterSet.contains($0) }))
     }
 
-    public func toJsonObject() -> Any? {
+    func toJsonObject() -> Any? {
         guard let data = data(using: .utf8) else {
             return nil
         }
@@ -59,9 +61,10 @@ extension String {
 }
 
 // MARK: - Filtering
-extension String {
+
+public extension String {
     var filterNumeric: String {
-        return replacingOccurrences(of:"[^0-9|-|.]", with: "", options: .regularExpression)
+        return replacingOccurrences(of: "[^0-9|-|.]", with: "", options: .regularExpression)
     }
 
     var toInt: Int? {

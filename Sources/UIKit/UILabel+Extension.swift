@@ -8,29 +8,29 @@
 
 import UIKit
 
-extension UILabel {
-    public static func autoLayoutView(font: UIFont?, color: UIColor?) -> Self {
-        let label = self.autoLayoutView()
+public extension UILabel {
+    static func autoLayoutView(font: UIFont?, color: UIColor?) -> Self {
+        let label = autoLayoutView()
         label.textColor = color
         label.font = font
 
         return label
     }
 
-    public convenience init(font: UIFont?, color: UIColor?) {
+    convenience init(font: UIFont?, color: UIColor?) {
         self.init()
         textColor = color
         self.font = font
     }
 
-    public func sizeToFit(constrainedWidth: CGFloat) {
+    func sizeToFit(constrainedWidth: CGFloat) {
         let numberOfLines = self.numberOfLines
         self.numberOfLines = 0
         var fitSize = sizeThatFits(CGSize(width: constrainedWidth, height: .greatestFiniteMagnitude))
         self.numberOfLines = numberOfLines
 
         if numberOfLines > 0 {
-            fitSize.height = min(fitSize.height, ceil(self.font.lineHeight * CGFloat(numberOfLines)))
+            fitSize.height = min(fitSize.height, ceil(font.lineHeight * CGFloat(numberOfLines)))
         }
 
         size = fitSize
@@ -38,9 +38,10 @@ extension UILabel {
 }
 
 // MARK: - Measure
+
 private var measureLabel = UILabel()
-extension UILabel {
-    public static func measureSize(
+public extension UILabel {
+    static func measureSize(
         withText text: String,
         font: UIFont,
         numberOfLines: Int,
@@ -56,7 +57,7 @@ extension UILabel {
         return measureLabel.size
     }
 
-    public static func measureSize(
+    static func measureSize(
         withAttributedString string: NSAttributedString,
         numberOfLines: Int,
         constrainedWidth: CGFloat,

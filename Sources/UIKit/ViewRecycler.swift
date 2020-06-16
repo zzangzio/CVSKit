@@ -23,12 +23,12 @@ public class ViewRecycler: NSObject {
         storeDic[key] = views
     }
 
-    public func dequeue<View: UIView>(initializer: (() -> View)) -> View {
+    public func dequeue<View: UIView>(initializer: () -> View) -> View {
         let className = NSStringFromClass(View.self)
         return dequeue(initializer: initializer, key: className)
     }
 
-    public func dequeue<View: UIView>(initializer: (() -> View), key: String) -> View {
+    public func dequeue<View: UIView>(initializer: () -> View, key: String) -> View {
         if var views = storeDic[key] as? [View] {
             if views.isEmpty == false {
                 defer { storeDic[key] = views }

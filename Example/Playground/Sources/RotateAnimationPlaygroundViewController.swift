@@ -6,8 +6,8 @@
 //  Copyright © 2018년 zzangzio. All rights reserved.
 //
 
-import UIKit
 import CVSKit
+import UIKit
 
 class RotateAnimationPlaygroundViewController: PlaygroundViewController {
     override class var playgroundTitle: String {
@@ -45,14 +45,16 @@ class RotateAnimationPlaygroundViewController: PlaygroundViewController {
         view.addSubview(playButton)
         view.addSubview(stopButton)
 
-        let layoutGuide = view.backportSafeAreaLayoutGuide
+        let layoutGuide = view.safeAreaLayoutGuide
 
-        [imageView.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
-         imageView.centerYAnchor.constraint(equalTo: layoutGuide.centerYAnchor),
-         stopButton.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor, constant: -50),
-         stopButton.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: -30),
-         playButton.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor, constant: 50),
-         playButton.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: -30)].activate()
+        [
+            imageView.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
+            imageView.centerYAnchor.constraint(equalTo: layoutGuide.centerYAnchor),
+            stopButton.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor, constant: -50),
+            stopButton.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: -30),
+            playButton.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor, constant: 50),
+            playButton.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: -30),
+        ].activate()
 
         stopButton.setAction { [weak self] _ in
             guard let self = self else { return }

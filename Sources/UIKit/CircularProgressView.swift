@@ -37,7 +37,7 @@ private class CircularProgressLayer: CALayer {
         didSet { setNeedsDisplay() }
     }
 
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder _: NSCoder) { fatalError("init(coder:) has not been implemented") }
     override init() {
         super.init()
     }
@@ -45,15 +45,15 @@ private class CircularProgressLayer: CALayer {
     override init(layer: Any) {
         super.init(layer: layer)
         if let progressLayer = layer as? CircularProgressLayer {
-            self.progress = progressLayer.progress
-            self.maxProgress = progressLayer.maxProgress
-            self.zeroDimension = progressLayer.zeroDimension
-            self.progressColor = progressLayer.progressColor
-            self.progressWidth = progressLayer.progressWidth
-            self.trackColor = progressLayer.trackColor
-            self.trackWidth = progressLayer.trackWidth
-            self.clockWise = progressLayer.clockWise
-            self.startAngle = progressLayer.startAngle
+            progress = progressLayer.progress
+            maxProgress = progressLayer.maxProgress
+            zeroDimension = progressLayer.zeroDimension
+            progressColor = progressLayer.progressColor
+            progressWidth = progressLayer.progressWidth
+            trackColor = progressLayer.trackColor
+            trackWidth = progressLayer.trackWidth
+            clockWise = progressLayer.clockWise
+            startAngle = progressLayer.startAngle
         }
     }
 
@@ -63,32 +63,36 @@ private class CircularProgressLayer: CALayer {
         UIGraphicsPushContext(ctx)
         ctx.setShouldAntialias(true)
 
-        let trackBounds = self.bounds
-        let center = CGPoint(x: trackBounds.size.width/2, y: trackBounds.size.height/2)
+        let trackBounds = bounds
+        let center = CGPoint(x: trackBounds.size.width / 2, y: trackBounds.size.height / 2)
 
         // draw progress
         let trackRadius = (trackBounds.size.width / 2) - (trackWidth * 0.5)
 
         trackColor.setStroke()
-        let trackPath = UIBezierPath.init(arcCenter: center,
-                                          radius: trackRadius,
-                                          startAngle: 0,
-                                          endAngle: CGFloat.pi * 2,
-                                          clockwise: true)
+        let trackPath = UIBezierPath(
+            arcCenter: center,
+            radius: trackRadius,
+            startAngle: 0,
+            endAngle: CGFloat.pi * 2,
+            clockwise: true
+        )
 
         trackPath.lineWidth = trackWidth
         trackPath.stroke()
 
         let radius = (trackBounds.size.width / 2) - (progressWidth * 0.5) - (trackWidth - progressWidth) / 2
-        let endAngle = (progress/maxProgress * 2 * CGFloat.pi) + startAngle
+        let endAngle = (progress / maxProgress * 2 * CGFloat.pi) + startAngle
 
         progressColor.setStroke()
 
-        let progressPath = UIBezierPath.init(arcCenter: center,
-                                             radius: radius,
-                                             startAngle: startAngle,
-                                             endAngle: endAngle,
-                                             clockwise: clockWise)
+        let progressPath = UIBezierPath(
+            arcCenter: center,
+            radius: radius,
+            startAngle: startAngle,
+            endAngle: endAngle,
+            clockwise: clockWise
+        )
         progressPath.lineCapStyle = .round
         progressPath.lineWidth = progressWidth
         progressPath.stroke()
@@ -105,7 +109,7 @@ private class CircularProgressLayer: CALayer {
 }
 
 open class CircularProgressView: UIView {
-    open override class var layerClass: AnyClass {
+    override open class var layerClass: AnyClass {
         return CircularProgressLayer.self
     }
 
@@ -165,8 +169,8 @@ open class CircularProgressView: UIView {
         get { return myLayer.startAngle }
     }
 
-    required public init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    public override init(frame: CGRect) {
+    public required init?(coder _: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         contentMode = .redraw
         backgroundColor = UIColor.clear
@@ -177,7 +181,6 @@ open class CircularProgressView: UIView {
         let keyPath = #keyPath(CircularProgressLayer.progress)
         if event == keyPath,
             let action = super.action(for: layer, forKey: #keyPath(backgroundColor)) as? CAAnimation {
-
             let animation = CABasicAnimation(keyPath: keyPath)
             animation.fromValue = myLayer.progress
             animation.toValue = progress

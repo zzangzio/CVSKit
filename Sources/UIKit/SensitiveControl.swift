@@ -11,7 +11,7 @@ import UIKit
 open class SensitiveButton: UIButton {
     public let hitTester = SensitiveHitTester()
 
-    open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+    override open func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         return hitTester.point(inside: point, bounds: bounds, with: event)
     }
 }
@@ -19,7 +19,7 @@ open class SensitiveButton: UIButton {
 open class SensitiveHitTester: NSObject {
     public var extraHitEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 
-    func point(inside point: CGPoint, bounds: CGRect, with event: UIEvent?) -> Bool {
+    func point(inside point: CGPoint, bounds: CGRect, with _: UIEvent?) -> Bool {
         var rect = bounds
         rect.origin.x -= extraHitEdgeInsets.left
         rect.origin.y -= extraHitEdgeInsets.top

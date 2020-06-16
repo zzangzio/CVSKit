@@ -6,8 +6,8 @@
 //  Copyright © 2018년 zzangzio. All rights reserved.
 //
 
-import UIKit
 import Darwin.POSIX.sys
+import UIKit
 
 // https://stackoverflow.com/questions/11197509/ios-how-to-get-device-make-and-model
 public enum HardwareModel: String {

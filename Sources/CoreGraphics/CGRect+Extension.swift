@@ -7,14 +7,14 @@
 
 import CoreGraphics
 
-extension CGRect {
-    public func intersectionRatio(_ r2: CGRect) -> CGFloat {
+public extension CGRect {
+    func intersectionRatio(_ r2: CGRect) -> CGFloat {
         let intersection = self.intersection(r2)
         guard intersection.size != .zero else { return 0 }
         return intersection.size.area / size.area
     }
 
-    public var center: CGPoint {
-        return CGPoint(x: midX, y: midY)
+    var center: CGPoint {
+        CGPoint(x: midX, y: midY)
     }
 }
