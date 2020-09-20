@@ -10,7 +10,6 @@ import UIKit
 
 public extension UIScrollView {
     var backportContentInset: UIEdgeInsets {
-        guard #available(iOS 11, *) else { return contentInset }
         return adjustedContentInset
     }
 

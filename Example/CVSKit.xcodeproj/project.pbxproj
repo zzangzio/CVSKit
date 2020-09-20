@@ -53,6 +53,7 @@
 		8685C95E2497998800412AF7 /* ChatViewSizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8685C95D2497998800412AF7 /* ChatViewSizeCalculator.swift */; };
 		86BE814023FB8A8400303EDD /* FragleWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE813F23FB8A8400303EDD /* FragleWindowViewController.swift */; };
 		86BE814223FB8C7A00303EDD /* FragileWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BE814123FB8C7A00303EDD /* FragileWindow.swift */; };
+		86C9F34625172AA2000DE042 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C9F34525172AA2000DE042 /* UIApplication+Extension.swift */; };
 		86DDD2D121B3804E0073E652 /* CVSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 86DDD2CF21B3804E0073E652 /* CVSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86DDD2E121B417080073E652 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDD2D921B417080073E652 /* UIImage+Extension.swift */; };
 		86DDD2E221B417080073E652 /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DDD2DA21B417080073E652 /* UIEdgeInsets+Extension.swift */; };
@@ -154,6 +155,7 @@
 		8685C95D2497998800412AF7 /* ChatViewSizeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewSizeCalculator.swift; sourceTree = "<group>"; };
 		86BE813F23FB8A8400303EDD /* FragleWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragleWindowViewController.swift; sourceTree = "<group>"; };
 		86BE814123FB8C7A00303EDD /* FragileWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FragileWindow.swift; sourceTree = "<group>"; };
+		86C9F34525172AA2000DE042 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		86DDD2CC21B3804E0073E652 /* CVSKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CVSKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86DDD2CF21B3804E0073E652 /* CVSKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CVSKit.h; sourceTree = "<group>"; };
 		86DDD2D021B3804E0073E652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 				86772D2121BCD9EA001CCDF8 /* UIAlertController+Extension.swift */,
 				8685C955249793E600412AF7 /* UICollectionView+Extension.swift */,
 				8685C957249795D300412AF7 /* UIImage+Face.swift */,
+				86C9F34525172AA2000DE042 /* UIApplication+Extension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8685C956249793E600412AF7 /* UICollectionView+Extension.swift in Sources */,
+				86C9F34625172AA2000DE042 /* UIApplication+Extension.swift in Sources */,
 				86BE814223FB8C7A00303EDD /* FragileWindow.swift in Sources */,
 				86772CE921BBCF2F001CCDF8 /* CGRect+Extension.swift in Sources */,
 				86772D4D21BCE8AE001CCDF8 /* Date+Extension.swift in Sources */,

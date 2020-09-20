@@ -125,6 +125,46 @@ public extension UIView {
             trailingAnchor.constraint(equalTo: anchors.trailingAnchor),
         ]
     }
+
+    func vSpacer() -> (topAnchor: NSLayoutYAxisAnchor, bottomAnchor: NSLayoutYAxisAnchor) {
+        let top = UIView.autoLayoutView()
+        top.isUserInteractionEnabled = false
+
+        let bottom = UIView.autoLayoutView()
+        bottom.isUserInteractionEnabled = false
+
+        addSubview(top)
+        addSubview(bottom)
+
+        let views = ["top": top, "bottom": bottom]
+
+        NSLayoutConstraint.constraints(withVisualFormat: "V:|[top(>=0)]", metrics: nil, views: views).activate()
+        NSLayoutConstraint.constraints(withVisualFormat: "V:[bottom(==top)]|", metrics: nil, views: views).activate()
+
+        return (top.bottomAnchor, bottom.topAnchor)
+    }
+
+    func hSpacer() -> (leadingAnchor: NSLayoutXAxisAnchor, trailingAnchor: NSLayoutXAxisAnchor) {
+        let leading = UIView.autoLayoutView()
+        leading.isUserInteractionEnabled = false
+
+        let trailing = UIView.autoLayoutView()
+        trailing.isUserInteractionEnabled = false
+
+        addSubview(leading)
+        addSubview(trailing)
+
+        let views = ["leading": leading, "trailing": trailing]
+
+        NSLayoutConstraint.constraints(withVisualFormat: "H:|[leading(>=0)]", metrics: nil, views: views).activate()
+        NSLayoutConstraint.constraints(
+            withVisualFormat: "H:[trailing(==leading)]|",
+            metrics: nil,
+            views: views
+        ).activate()
+
+        return (leading.trailingAnchor, trailing.leadingAnchor)
+    }
 }
 
 public extension NSLayoutDimension {
@@ -362,5 +402,10 @@ public extension UIView {
     static var isRightToLeft: Bool {
         let direction = UIView.userInterfaceLayoutDirection(for: UIView.appearance().semanticContentAttribute)
         return direction == .rightToLeft
+    }
+
+    var isDarkMode: Bool {
+        guard #available(iOS 13, *) else { return false }
+        return traitCollection.userInterfaceStyle == .dark
     }
 }

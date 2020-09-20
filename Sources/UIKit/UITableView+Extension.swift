@@ -96,12 +96,7 @@ public extension UITableView {
         guard let refreshControl = self.refreshControl else { return }
         refreshControl.beginRefreshing()
 
-        let offsetPoint: CGPoint = {
-            if #available(iOS 11, *) {
-                return CGPoint(x: 0, y: -adjustedContentInset.top)
-            }
-            return CGPoint(x: 0, y: -contentInset.top)
-        }()
+        let offsetPoint = CGPoint(x: 0, y: -adjustedContentInset.top)
 
         setContentOffset(offsetPoint, animated: true)
     }

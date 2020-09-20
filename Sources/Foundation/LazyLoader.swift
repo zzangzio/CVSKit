@@ -24,7 +24,9 @@ public class LazyLoader<Type>: NSObject {
         }()
     }
 
-    public func unload() {
-        optional = nil
+    public func unload(block: ((_ unloadedValue: Type) -> Void)? = nil) {
+        defer { optional = nil }
+        guard let unloadedValue = optional else { return }
+        block?(unloadedValue)
     }
 }
